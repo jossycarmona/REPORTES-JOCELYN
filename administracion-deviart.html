@@ -1,0 +1,437 @@
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administración DEVIART</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fc; color: #1a1a2e; min-height: 100vh; padding: 32px 28px; }
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 2px solid #e2e8f0; }
+  .header h1 { font-size: 22px; font-weight: 700; color: #0f172a; letter-spacing: -0.3px; }
+  .header .subtitle { font-size: 12px; color: #64748b; margin-top: 4px; }
+  .header .right { text-align: right; }
+  .header .company { font-size: 13px; font-weight: 600; color: #475569; }
+  .header .timestamp { font-size: 11px; color: #94a3b8; margin-top: 3px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .card { background: #fff; border-radius: 12px; padding: 22px 24px; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 18px; }
+  .card-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #64748b; }
+  .badge { font-size: 10px; padding: 3px 9px; border-radius: 20px; font-weight: 600; }
+  .badge-green { background: #f0fdf4; color: #15803d; }
+  .badge-amber { background: #fffbeb; color: #b45309; }
+  .badge-gray  { background: #f1f5f9; color: #475569; }
+  .metric-value { font-size: 30px; font-weight: 700; color: #0f172a; line-height: 1.1; }
+  .metric-sub   { font-size: 12px; color: #64748b; margin-top: 4px; }
+  .divider { height: 1px; background: #f1f5f9; margin: 14px 0; }
+  .row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; }
+  .row + .row { border-top: 1px solid #f8fafc; }
+  .row-label { font-size: 12px; color: #475569; display: flex; align-items: center; gap: 6px; }
+  .row-value { font-size: 13px; font-weight: 600; }
+  .positive { color: #15803d; }
+  .negative { color: #dc2626; }
+  .warning  { color: #b45309; }
+  .neutral  { color: #0f172a; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .dot-green { background: #22c55e; }
+  .dot-red   { background: #ef4444; }
+  .net-box { background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 1px solid #bbf7d0; border-radius: 10px; padding: 14px 16px; margin: 12px 0; }
+  .net-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #15803d; }
+  .net-value { font-size: 28px; font-weight: 700; color: #15803d; margin-top: 2px; }
+  .net-sub   { font-size: 11px; color: #166534; margin-top: 3px; }
+  .stat-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 14px; }
+  .stat-box { background: #f8fafc; border-radius: 8px; padding: 11px 12px; text-align: center; border: 1px solid #f1f5f9; }
+  .stat-val { font-size: 22px; font-weight: 700; }
+  .stat-lbl { font-size: 9px; color: #94a3b8; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .section-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: #94a3b8; margin: 14px 0 8px; }
+  .bank-group { border-radius: 8px; margin-bottom: 8px; overflow: hidden; border: 1px solid #e2e8f0; }
+  .bank-group-header { display: flex; justify-content: space-between; align-items: center; padding: 9px 13px; }
+  .bank-group-name { font-size: 12px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 7px; }
+  .bank-group-total { font-size: 13px; font-weight: 700; color: #fff; }
+  .bank-sub-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 13px 7px 22px; background: #fff; border-top: 1px solid #f1f5f9; }
+  .bank-sub-label { font-size: 11px; color: #334155; font-weight: 500; }
+  .bank-sub-amount { font-size: 12px; font-weight: 600; }
+  .bank-sub-note { font-size: 9px; color: #94a3b8; margin-top: 1px; }
+  .credi-header { display: flex; justify-content: space-between; align-items: center; padding: 7px 13px 6px 22px; background: #f0f4ff; border-top: 1px solid #e2e8f0; }
+  .credi-label { font-size: 11px; font-weight: 600; color: #1d4ed8; }
+  .credi-total { font-size: 12px; font-weight: 700; color: #b45309; }
+  .credi-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 13px 5px 32px; background: #fafbff; border-top: 1px solid #f1f5f9; }
+  .credi-doc { font-size: 11px; color: #475569; font-weight: 500; font-family: monospace; }
+  .credi-right { text-align: right; }
+  .credi-amount { font-size: 11px; font-weight: 600; color: #b45309; }
+  .credi-vence { font-size: 9px; color: #94a3b8; }
+  .credi-vence.urgent { color: #dc2626; font-weight: 600; }
+  .tag { font-size: 9px; padding: 2px 6px; border-radius: 8px; font-weight: 600; }
+  .tag-w   { background: rgba(255,255,255,0.25); color: #fff; }
+  .tag-usd { background: rgba(255,255,255,0.25); color: #fff; }
+  .proj-box { background: linear-gradient(135deg, #fff7ed, #ffedd5); border: 1px solid #fed7aa; border-radius: 10px; padding: 14px 16px; margin-top: 12px; }
+  .proj-label { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #c2410c; margin-bottom: 8px; }
+  .proj-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .proj-item { text-align: center; background: rgba(255,255,255,0.6); border-radius: 8px; padding: 8px 6px; }
+  .proj-val { font-size: 18px; font-weight: 700; color: #0f172a; }
+  .proj-val.orange { color: #c2410c; }
+  .proj-val.green  { color: #15803d; }
+  .proj-sub { font-size: 9px; color: #94a3b8; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.4px; }
+  .proj-amount { font-size: 11px; font-weight: 600; color: #c2410c; margin-top: 3px; }
+  .cob-kpis { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .kpi { background: #f8fafc; border: 1px solid #f1f5f9; border-radius: 10px; padding: 12px 14px; text-align: center; }
+  .kpi-val { font-size: 22px; font-weight: 700; color: #0f172a; }
+  .kpi-val.red { color: #dc2626; }
+  .kpi-lbl { font-size: 9px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.6px; margin-top: 3px; }
+  .diario-card { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 9px; margin-bottom: 6px; background: #f8fafc; border: 1px solid #f1f5f9; }
+  .diario-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .diario-info { flex: 1; }
+  .diario-name { font-size: 12px; font-weight: 600; color: #0f172a; }
+  .diario-meta { font-size: 10px; color: #94a3b8; margin-top: 2px; }
+  .diario-right { text-align: right; min-width: 120px; }
+  .diario-amount { font-size: 13px; font-weight: 700; color: #0f172a; }
+  .diario-pct-bar { height: 3px; background: #e2e8f0; border-radius: 2px; margin-top: 4px; overflow: hidden; }
+  .diario-pct-label { font-size: 9px; color: #94a3b8; margin-top: 2px; }
+  .cliente-row { display: flex; align-items: center; gap: 10px; padding: 7px 0; border-bottom: 1px solid #f8fafc; }
+  .cliente-row:last-child { border-bottom: none; }
+  .cliente-rank { font-size: 10px; font-weight: 700; color: #94a3b8; width: 14px; text-align: center; flex-shrink: 0; }
+  .cliente-info { flex: 1; }
+  .cliente-name { font-size: 11px; color: #334155; font-weight: 500; }
+  .cliente-bar-wrap { height: 3px; background: #f1f5f9; border-radius: 2px; margin-top: 4px; overflow: hidden; }
+  .cliente-bar { height: 100%; background: #3b82f6; border-radius: 2px; }
+  .cliente-amount { font-size: 12px; font-weight: 700; color: #0f172a; min-width: 100px; text-align: right; flex-shrink: 0; }
+  .cat-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-radius: 8px; margin-bottom: 4px; }
+  .cat-row:nth-child(odd) { background: #f8fafc; }
+  .cat-left { flex: 1; }
+  .cat-name { font-size: 12px; color: #334155; font-weight: 500; }
+  .cat-right { text-align: right; min-width: 140px; }
+  .cat-amount { font-size: 13px; font-weight: 700; color: #0f172a; }
+  .cat-pct { font-size: 10px; color: #94a3b8; margin-left: 6px; }
+  .progress-bar { height: 3px; background: #e2e8f0; border-radius: 2px; margin-top: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 2px; }
+  .total-row { background: #0f172a; border-radius: 8px; padding: 12px 14px; margin-top: 8px; display: flex; justify-content: space-between; align-items: center; }
+  .total-row .t-label  { color: #f1f5f9; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
+  .total-row .t-amount { color: #fff; font-size: 16px; font-weight: 700; }
+  .footer { text-align: center; font-size: 10px; color: #94a3b8; margin-top: 24px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
+</style>
+<style id="claude-agent-animation-styles">
+      @keyframes claude-pulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      #claude-agent-glow-border-inner {
+        animation: claude-pulse 2s ease-in-out infinite;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #claude-agent-glow-border-inner {
+          animation: none;
+        }
+      }
+    </style></head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>Administración DEVIART</h1>
+    <div class="subtitle">Panel Ejecutivo – Dirección General</div>
+  </div>
+  <div class="right">
+    <div class="company">DEVIART SA DE CV</div>
+    <div class="timestamp">Actualizado: 19 junio 2026</div>
+  </div>
+</div>
+
+<div class="grid">
+  <!-- MÓDULO 1: POSICIÓN BANCARIA -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Posición Bancaria</div>
+      <span class="badge badge-green">Al 19/Jun/2026</span>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div class="metric-value">$20,618,663.13</div>
+      <div class="metric-sub">Liquidez total consolidada &nbsp;·&nbsp; MXN</div>
+    </div>
+    <div class="divider"></div>
+    <div class="bank-group">
+      <div class="bank-group-header" style="background:#004481;">
+        <span class="bank-group-name">BBVA <span class="tag tag-w">MXN</span></span>
+        <span class="bank-group-total">$18,874,305.79</span>
+      </div>
+      <div class="bank-sub-row">
+        <div><div class="bank-sub-label">Inversión •8097</div><div class="bank-sub-note">Fondo de inversión</div></div>
+        <span class="bank-sub-amount positive">$18,157,611.14</span>
+      </div>
+      <div class="bank-sub-row">
+        <div><div class="bank-sub-label">Bancomer •9144</div><div class="bank-sub-note">Cuenta corriente</div></div>
+        <span class="bank-sub-amount neutral">$216,287.20</span>
+      </div>
+      <div class="credi-header">
+        <span class="credi-label">Crediproveedores Confirmado</span>
+        <span class="credi-total">$500,407.45 comprometido</span>
+      </div>
+      <div class="credi-row">
+        <div class="credi-doc">DIA8081446</div>
+        <div class="credi-right"><div class="credi-amount">$333,722.20</div><div class="credi-vence">Vence 16/Jul/2026</div></div>
+      </div>
+      <div class="credi-row">
+        <div class="credi-doc">DIA8082097</div>
+        <div class="credi-right"><div class="credi-amount">$111,123.50</div><div class="credi-vence">Vence 06/Ago/2026</div></div>
+      </div>
+      <div class="credi-row">
+        <div class="credi-doc">DIA8081199</div>
+        <div class="credi-right"><div class="credi-amount">$55,561.75</div><div class="credi-vence urgent">Vence 25/Jun/2026 ⚠️</div></div>
+      </div>
+    </div>
+    <div class="bank-group">
+      <div class="bank-group-header" style="background:#EC0000;">
+        <span class="bank-group-name">Santander <span class="tag tag-w">MXN</span></span>
+        <span class="bank-group-total">$886,117.42</span>
+      </div>
+      <div class="bank-sub-row">
+        <div><div class="bank-sub-label">Cuenta corriente 65504129495</div><div class="bank-sub-note">Operación diaria</div></div>
+        <span class="bank-sub-amount neutral">$886,117.42</span>
+      </div>
+    </div>
+    <div class="bank-group">
+      <div class="bank-group-header" style="background:#1B3A6B;">
+        <span class="bank-group-name">Monex <span class="tag tag-usd">USD</span></span>
+        <span class="bank-group-total">$1,258,647.37</span>
+      </div>
+      <div class="bank-sub-row">
+        <div><div class="bank-sub-label">$72,497.30 USD · T/C $17.36</div><div class="bank-sub-note">Valuación en MXN</div></div>
+        <span class="bank-sub-amount" style="color:#1d4ed8;">$1,258,647.37</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MÓDULO 2: RELACIÓN OTAKARA -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Relación Otakara</div>
+      <span class="badge badge-green">Posición Favorable</span>
+    </div>
+    <div class="row">
+      <span class="row-label"><span class="dot dot-green"></span>Por Cobrar (cliente)</span>
+      <span class="row-value positive">$2,835,399.60</span>
+    </div>
+    <div class="row">
+      <span class="row-label"><span class="dot dot-red"></span>Por Pagar (proveedor)</span>
+      <span class="row-value negative">$1,659,551.98</span>
+    </div>
+    <div class="net-box">
+      <div class="net-label">Posición Neta</div>
+      <div class="net-value">$1,175,847.62</div>
+      <div class="net-sub">A favor de DEVIART &nbsp;·&nbsp; Ratio 1.71×</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-val warning">73</div><div class="stat-lbl">Fact. pagar</div></div>
+      <div class="stat-box"><div class="stat-val positive">14</div><div class="stat-lbl">Fact. cobrar</div></div>
+      <div class="stat-box"><div class="stat-val negative">4</div><div class="stat-lbl">Venc. cobrar</div></div>
+    </div>
+    <div class="divider"></div>
+    <div class="row">
+      <span class="row-label" style="font-size:11px;">Cobrar próximo</span>
+      <span class="row-value neutral" style="font-size:12px;">$2,107,633.00</span>
+    </div>
+    <div class="row">
+      <span class="row-label" style="font-size:11px;">Cobrar vencido / hoy</span>
+      <span class="row-value negative" style="font-size:12px;">$727,766.60</span>
+    </div>
+    <div class="proj-box">
+      <div class="proj-label">📅 Proyección deuda al 30 de junio</div>
+      <div class="proj-grid">
+        <div class="proj-item">
+          <div class="proj-val orange">16</div>
+          <div class="proj-sub">Fact. vencidas</div>
+          <div class="proj-amount">$351,275.90</div>
+        </div>
+        <div class="proj-item">
+          <div class="proj-val green">57</div>
+          <div class="proj-sub">Después 30 Jun</div>
+          <div class="proj-amount" style="color:#15803d;">$1,308,276.08</div>
+        </div>
+        <div class="proj-item">
+          <div class="proj-val">73</div>
+          <div class="proj-sub">Total facturas</div>
+          <div class="proj-amount" style="color:#475569;">$1,659,551.98</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="grid">
+  <!-- MÓDULO 3: COBRANZA DISTRIBUIDORES -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Cobranza Distribuidores</div>
+      <span class="badge badge-amber">14 Vencidas</span>
+    </div>
+    <div class="cob-kpis">
+      <div class="kpi"><div class="kpi-val">$550,912</div><div class="kpi-lbl">Total por cobrar</div></div>
+      <div class="kpi"><div class="kpi-val">40</div><div class="kpi-lbl">Facturas activas</div></div>
+      <div class="kpi"><div class="kpi-val red">14</div><div class="kpi-lbl">Vencidas</div></div>
+    </div>
+    <div class="section-label">Por diario</div>
+    
+  <div class="diario-card">
+    <div class="diario-dot" style="background:#EC0000;"></div>
+    <div class="diario-info">
+      <div class="diario-name">Santander</div>
+      <div class="diario-meta">36 fact. &nbsp;·&nbsp; <span style="color:#dc2626;font-weight:600;">13 vencidas</span></div>
+    </div>
+    <div class="diario-right">
+      <div class="diario-amount">$255,098.50</div>
+      <div class="diario-pct-bar"><div style="width:46%;height:100%;background:#EC0000;border-radius:2px;"></div></div>
+      <div class="diario-pct-label">46%</div>
+    </div>
+  </div>
+  <div class="diario-card">
+    <div class="diario-dot" style="background:#f59e0b;"></div>
+    <div class="diario-info">
+      <div class="diario-name">Remisiones Bajío</div>
+      <div class="diario-meta">2 fact. &nbsp;·&nbsp; <span style="color:#dc2626;font-weight:600;">1 vencidas</span></div>
+    </div>
+    <div class="diario-right">
+      <div class="diario-amount">$226,387.50</div>
+      <div class="diario-pct-bar"><div style="width:41%;height:100%;background:#f59e0b;border-radius:2px;"></div></div>
+      <div class="diario-pct-label">41%</div>
+    </div>
+  </div>
+  <div class="diario-card">
+    <div class="diario-dot" style="background:#22c55e;"></div>
+    <div class="diario-info">
+      <div class="diario-name">Remisiones Azteca</div>
+      <div class="diario-meta">2 fact. &nbsp;·&nbsp; <span style="color:#15803d;font-weight:600;">0 vencidas</span></div>
+    </div>
+    <div class="diario-right">
+      <div class="diario-amount">$69,426.00</div>
+      <div class="diario-pct-bar"><div style="width:13%;height:100%;background:#22c55e;border-radius:2px;"></div></div>
+      <div class="diario-pct-label">13%</div>
+    </div>
+  </div>
+    <div class="section-label">Top clientes</div>
+    
+  <div class="cliente-row">
+    <div class="cliente-rank">1</div>
+    <div class="cliente-info">
+      <div class="cliente-name">Fanny Lartigue Gutiérrez</div>
+      <div class="cliente-bar-wrap"><div class="cliente-bar" style="width:100%;"></div></div>
+    </div>
+    <div class="cliente-amount">$226,387.50</div>
+  </div>
+  <div class="cliente-row">
+    <div class="cliente-rank">2</div>
+    <div class="cliente-info">
+      <div class="cliente-name">Papel, Diseño y Color</div>
+      <div class="cliente-bar-wrap"><div class="cliente-bar" style="width:46%;"></div></div>
+    </div>
+    <div class="cliente-amount">$103,883.22</div>
+  </div>
+  <div class="cliente-row">
+    <div class="cliente-rank">3</div>
+    <div class="cliente-info">
+      <div class="cliente-name">Padcolor Insumos Gráficos</div>
+      <div class="cliente-bar-wrap"><div class="cliente-bar" style="width:44%;"></div></div>
+    </div>
+    <div class="cliente-amount">$99,307.60</div>
+  </div>
+  <div class="cliente-row">
+    <div class="cliente-rank">4</div>
+    <div class="cliente-info">
+      <div class="cliente-name">Mayra Virginia Ornelas</div>
+      <div class="cliente-bar-wrap"><div class="cliente-bar" style="width:21%;"></div></div>
+    </div>
+    <div class="cliente-amount">$47,110.50</div>
+  </div>
+  <div class="cliente-row">
+    <div class="cliente-rank">5</div>
+    <div class="cliente-info">
+      <div class="cliente-name">Michel Martínez Mendoza</div>
+      <div class="cliente-bar-wrap"><div class="cliente-bar" style="width:17%;"></div></div>
+    </div>
+    <div class="cliente-amount">$39,045.60</div>
+  </div>
+  <div class="cliente-row">
+    <div class="cliente-rank">6</div>
+    <div class="cliente-info">
+      <div class="cliente-name">Joel Abdias Ornelas Soto</div>
+      <div class="cliente-bar-wrap"><div class="cliente-bar" style="width:10%;"></div></div>
+    </div>
+    <div class="cliente-amount">$22,315.50</div>
+  </div>
+  </div>
+
+  <!-- MÓDULO 4: GASTOS FIJOS MENSUALES -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title">Gastos Fijos Mensuales</div>
+      <span class="badge badge-gray">Junio 2026</span>
+    </div>
+    <div style="margin-bottom:14px;">
+      <div class="metric-value">$660,064.19</div>
+      <div class="metric-sub">Total gastos fijos identificados &nbsp;·&nbsp; Junio 2026</div>
+    </div>
+    <div class="divider"></div>
+    
+  <div class="cat-row">
+    <div class="cat-left">
+      <div class="cat-name">🏢 Arrendamientos</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:95%;background:#f59e0b;"></div></div>
+    </div>
+    <div class="cat-right"><span class="cat-amount">$248,407.15</span><span class="cat-pct">37.6%</span></div>
+  </div>
+  <div class="cat-row">
+    <div class="cat-left">
+      <div class="cat-name">👥 Nómina &amp; Capital Humano</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:90%;background:#22c55e;"></div></div>
+    </div>
+    <div class="cat-right"><span class="cat-amount">$235,433.18</span><span class="cat-pct">35.7%</span></div>
+  </div>
+  <div class="cat-row">
+    <div class="cat-left">
+      <div class="cat-name">📱 Marketing Digital</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:36%;background:#ec4899;"></div></div>
+    </div>
+    <div class="cat-right"><span class="cat-amount">$95,173.99</span><span class="cat-pct">14.4%</span></div>
+  </div>
+  <div class="cat-row">
+    <div class="cat-left">
+      <div class="cat-name">🔧 Operación &amp; Servicios</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:14%;background:#64748b;"></div></div>
+    </div>
+    <div class="cat-right"><span class="cat-amount">$36,638.39</span><span class="cat-pct">5.6%</span></div>
+  </div>
+  <div class="cat-row">
+    <div class="cat-left">
+      <div class="cat-name">💻 Tecnología &amp; Plataformas</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:8%;background:#8b5cf6;"></div></div>
+    </div>
+    <div class="cat-right"><span class="cat-amount">$21,753.26</span><span class="cat-pct">3.3%</span></div>
+  </div>
+  <div class="cat-row">
+    <div class="cat-left">
+      <div class="cat-name">📡 Telecomunicaciones</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:7%;background:#0ea5e9;"></div></div>
+    </div>
+    <div class="cat-right"><span class="cat-amount">$17,658.22</span><span class="cat-pct">2.7%</span></div>
+  </div>
+  <div class="cat-row">
+    <div class="cat-left">
+      <div class="cat-name">💼 Asesorías Profesionales</div>
+      <div class="progress-bar"><div class="progress-fill" style="width:2%;background:#6366f1;"></div></div>
+    </div>
+    <div class="cat-right"><span class="cat-amount">$5,000.00</span><span class="cat-pct">0.8%</span></div>
+  </div>
+    <div class="total-row">
+      <span class="t-label">TOTAL GASTOS FIJOS</span>
+      <span class="t-amount">$660,064.19</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Dirección General &nbsp;·&nbsp; DEVIART SA DE CV &nbsp;·&nbsp; Datos al 19 de junio de 2026
+</div>
+
+<div id="claude-agent-glow-border" style="position: fixed; inset: 0px; pointer-events: none; z-index: 2147483646; opacity: 1; transition: opacity 0.3s ease-in-out;"><div id="claude-agent-glow-border-inner" style="position: absolute; inset: 0px; will-change: opacity; box-shadow: rgba(217, 119, 87, 0.7) 0px 0px 15px inset, rgba(217, 119, 87, 0.5) 0px 0px 25px inset, rgba(217, 119, 87, 0.2) 0px 0px 35px inset;"></div></div><div id="claude-agent-stop-container" style="position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); justify-content: center; align-items: center; pointer-events: none; z-index: 2147483647;"><button id="claude-agent-stop-button" style="position: relative; transform: translateY(0px); padding: 12px 16px; background: rgb(250, 249, 245); color: rgb(20, 20, 19); border: 0.5px solid rgba(31, 30, 29, 0.4); border-radius: 12px; font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; box-shadow: rgba(217, 119, 87, 0.24) 0px 40px 80px, rgba(217, 119, 87, 0.24) 0px 4px 14px; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1); opacity: 1; user-select: none; pointer-events: auto; white-space: nowrap; margin: 0px auto;">
+      <svg width="16" height="16" viewBox="0 0 256 256" fill="currentColor" style="margin-right: 12px; vertical-align: middle;">
+        <path d="M128,20A108,108,0,1,0,236,128,108.12,108.12,0,0,0,128,20Zm0,192a84,84,0,1,1,84-84A84.09,84.09,0,0,1,128,212Zm40-112v56a12,12,0,0,1-12,12H100a12,12,0,0,1-12-12V100a12,12,0,0,1,12-12h56A12,12,0,0,1,168,100Z"></path>
+      </svg>
+      <span style="vertical-align: middle;">Stop Claude</span>
+    </button></div><div id="claude-phantom-cursor" aria-hidden="true" style="position: fixed; top: 0px; left: 0px; pointer-events: none; z-index: 2147483646; transform: translate3d(521px, 444px, 0px); transition: transform 180ms cubic-bezier(0.2, 0, 0, 1); will-change: transform;"><svg id="claude-phantom-cursor-plain" width="20" height="26" viewBox="0 0 20 26" style="position: absolute; top: 0px; left: 0px; overflow: visible;"><path d="M0 0 L0 18 L4.5 14 L7.5 21.5 L11 20 L8 13 L14 13 Z" stroke="white" stroke-width="3" stroke-linejoin="round" fill="white"></path><path d="M0 0 L0 18 L4.5 14 L7.5 21.5 L11 20 L8 13 L14 13 Z" fill="#111"></path></svg><svg id="claude-phantom-cursor-styled" width="20" height="26" viewBox="0 0 20 26" style="position: absolute; top: 0px; left: 0px; overflow: visible; filter: drop-shadow(rgba(217, 119, 87, 0.9) 0px 0px 4px) drop-shadow(rgba(217, 119, 87, 0.45) 0px 0px 10px);"><path d="M0 0 L0 18 L4.5 14 L7.5 21.5 L11 20 L8 13 L14 13 Z" stroke="#D97757" stroke-width="3" stroke-linejoin="round" fill="#D97757"></path><path d="M0 0 L0 18 L4.5 14 L7.5 21.5 L11 20 L8 13 L14 13 Z" fill="#FAF9F5"></path></svg></div></body></html>
