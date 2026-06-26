@@ -1,1471 +1,739 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.3">
-  <style type="text/css">
-    body {background-color: #f2f4f9}
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #0e0e0e; -webkit-text-stroke: #0e0e0e}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #585e6d; -webkit-text-stroke: #585e6d}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #7e2f0d; -webkit-text-stroke: #7e2f0d; background-color: #7e2f0d; min-height: 12.0px}
-    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #7e2f0d; -webkit-text-stroke: #7e2f0d; background-color: #fdf0db}
-    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #ae004b; -webkit-text-stroke: #ae004b; background-color: #e42b87; min-height: 12.0px}
-    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #ae004b; -webkit-text-stroke: #ae004b; background-color: #fceef6}
-    p.p7 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #1634cf; -webkit-text-stroke: #1634cf; background-color: #2e65ec; min-height: 12.0px}
-    p.p8 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #1634cf; -webkit-text-stroke: #1634cf; background-color: #ebf3ff}
-    p.p9 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #17702f; -webkit-text-stroke: #17702f; background-color: #1b963a; min-height: 12.0px}
-    p.p10 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #17702f; -webkit-text-stroke: #17702f}
-    p.p11 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 13.0px 'Helvetica Neue'; color: #0e0e0e; -webkit-text-stroke: #0e0e0e}
-    p.p12 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 11.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #f7f9fa}
-    p.p13 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 11.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff; min-height: 13.0px}
-    p.p14 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 11.0px 'Helvetica Neue'; color: #ffffff; -webkit-text-stroke: #ffffff}
-    p.p15 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.0px 'Helvetica Neue'; color: #8a929f; -webkit-text-stroke: #8a929f}
-    p.p16 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px 'Helvetica Neue'; color: #8a929f; -webkit-text-stroke: #8a929f}
-    p.p17 {margin: 0.0px 0.0px 0.0px 0.0px; font: 30.0px 'Helvetica Neue'; color: #0e0e0e; -webkit-text-stroke: #0e0e0e}
-    p.p18 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #1b963a; -webkit-text-stroke: #1b963a}
-    p.p19 {margin: 0.0px 0.0px 0.0px 0.0px; font: 30.0px 'Helvetica Neue'; color: #6715e8; -webkit-text-stroke: #6715e8}
-    p.p20 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #ce630b; -webkit-text-stroke: #ce630b}
-    p.p21 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.0px 'Helvetica Neue'; color: #8a929f; -webkit-text-stroke: #8a929f}
-    p.p22 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 9.5px 'Helvetica Neue'; color: #8a929f; -webkit-text-stroke: #8a929f}
-    p.p23 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #141414; min-height: 15.0px}
-    p.p24 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140}
-    p.p25 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #0e0e0e; -webkit-text-stroke: #0e0e0e}
-    p.p26 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140}
-    p.p27 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #1b963a; -webkit-text-stroke: #1b963a}
-    p.p28 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #141414; min-height: 15.0px}
-    p.p29 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 10.0px 'Helvetica Neue'; color: #17702f; -webkit-text-stroke: #17702f}
-    p.p30 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #f1be09; min-height: 15.0px}
-    p.p31 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #d10e1d; -webkit-text-stroke: #d10e1d}
-    p.p32 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #f1be09; min-height: 15.0px}
-    p.p33 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 10.0px 'Helvetica Neue'; color: #8e4f0a; -webkit-text-stroke: #8e4f0a}
-    p.p34 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #e82c35; min-height: 15.0px}
-    p.p35 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #e82c35; min-height: 15.0px}
-    p.p36 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #7e2f0d; min-height: 15.0px}
-    p.p37 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #7e2f0d; min-height: 15.0px}
-    p.p38 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #1b963a; min-height: 15.0px}
-    p.p39 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #1b963a; min-height: 15.0px}
-    p.p40 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #8a929f; -webkit-text-stroke: #8a929f}
-    p.p41 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 10.0px 'Helvetica Neue'; color: #585e6d; -webkit-text-stroke: #585e6d}
-    p.p42 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #6715e8; min-height: 15.0px}
-    p.p43 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #6715e8; min-height: 15.0px}
-    p.p44 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #2e65ec; min-height: 15.0px}
-    p.p45 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #2e65ec; min-height: 15.0px}
-    p.p46 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #e42b87; min-height: 15.0px}
-    p.p47 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140; background-color: #e42b87; min-height: 15.0px}
-    p.p48 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 10.0px 'Helvetica Neue'; color: #a80816; -webkit-text-stroke: #a80816}
-    p.p49 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; color: #0e0e0e; -webkit-text-stroke: #0e0e0e}
-    p.p50 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 13.0px 'Helvetica Neue'; color: #0e0e0e; -webkit-text-stroke: #0e0e0e; min-height: 16.0px}
-    p.p51 {margin: 0.0px 0.0px 0.0px 0.0px; font: 11.5px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140}
-    p.p52 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 11.5px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140}
-    p.p53 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: right; font: 12.0px 'Helvetica Neue'; color: #c7cbd3; -webkit-text-stroke: #c7cbd3}
-    p.p54 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Helvetica Neue'; color: #0e0e0e; -webkit-text-stroke: #0e0e0e}
-    p.p55 {margin: 0.0px 0.0px 0.0px 0.0px; font: 10.0px 'Helvetica Neue'; color: #8a929f; -webkit-text-stroke: #8a929f}
-    p.p56 {margin: 0.0px 0.0px 0.0px 0.0px; font: 9.5px 'Helvetica Neue'; color: #2a3140; -webkit-text-stroke: #2a3140}
-    p.p57 {margin: 0.0px 0.0px 0.0px 0.0px; font: 26.0px 'Helvetica Neue'; color: #0e0e0e; -webkit-text-stroke: #0e0e0e}
-    p.p58 {margin: 0.0px 0.0px 0.0px 0.0px; font: 26.0px 'Helvetica Neue'; color: #1b963a; -webkit-text-stroke: #1b963a}
-    p.p59 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #ce630b; -webkit-text-stroke: #ce630b}
-    p.p60 {margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #d10e1d; -webkit-text-stroke: #d10e1d}
-    p.p61 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; font: 10.0px 'Helvetica Neue'; color: #8a929f; -webkit-text-stroke: #8a929f}
-    span.s1 {font: 20.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #ffffff}
-    span.s2 {font-kerning: none; background-color: #ffffff}
-    span.s3 {font-kerning: none}
-    span.s4 {font-kerning: none; background-color: #edfdf1}
-    span.s5 {font-kerning: none; background-color: #f7f9fa}
-    span.s6 {font-kerning: none; background-color: #0e0e0e}
-    span.s7 {font: 10.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #d5fde1}
-    span.s8 {font-kerning: none; background-color: #d5fde1}
-    span.s9 {font: 10.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #fef9b6}
-    span.s10 {font-kerning: none; background-color: #fef9b6}
-    span.s11 {font: 10.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #f0f1f4}
-    span.s12 {font-kerning: none; background-color: #f0f1f4}
-    span.s13 {font: 10.0px '.Apple Color Emoji UI'; font-kerning: none; background-color: #fddadb}
-    span.s14 {font-kerning: none; background-color: #fddadb}
-    span.s15 {font: 9.5px '.Apple Color Emoji UI'; font-kerning: none; background-color: #fdf0db}
-    span.s16 {font-kerning: none; background-color: #fdf0db}
-    span.s17 {font: 9.5px '.Apple Color Emoji UI'; font-kerning: none; background-color: #fdeeef}
-    span.s18 {font-kerning: none; background-color: #fdeeef}
-    span.s19 {font: 9.5px '.Apple Color Emoji UI'; font-kerning: none; background-color: #fefce2}
-    span.s20 {font-kerning: none; background-color: #fefce2}
-    span.s21 {font: 9.5px '.Apple Color Emoji UI'; font-kerning: none; background-color: #ebf3ff}
-    span.s22 {font-kerning: none; background-color: #ebf3ff}
-    span.s23 {font: 9.5px '.Apple Color Emoji UI'; font-kerning: none; background-color: #edfdf1}
-    span.s24 {font: 9.5px '.Apple Color Emoji UI'; font-kerning: none; background-color: #fceef6}
-    span.s25 {font-kerning: none; background-color: #fceef6}
-    table.t1 {border-collapse: collapse}
-    td.td1 {width: 127.7px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 14.0px 8.0px 14.0px}
-    td.td2 {width: 91.9px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 14.0px 8.0px 14.0px}
-    td.td3 {width: 65.6px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 14.0px 8.0px 14.0px}
-    td.td4 {width: 108.9px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 14.0px 8.0px 14.0px}
-    td.td5 {width: 77.5px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 14.0px 8.0px 14.0px}
-    td.td6 {width: 72.4px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 14.0px 8.0px 14.0px}
-    td.td7 {width: 111.4px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 14.0px 8.0px 14.0px}
-    td.td8 {width: 91.2px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 14.0px 8.0px 14.0px}
-    td.td9 {width: 96.5px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 14.0px 8.0px 14.0px}
-    td.td10 {width: 127.7px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td11 {width: 91.9px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #0e0e0e #0e0e0e #f0f1f4 #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td12 {width: 65.6px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td13 {width: 108.9px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #0e0e0e #0e0e0e #f0f1f4 #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td14 {width: 77.5px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td15 {width: 72.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td16 {width: 111.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td17 {width: 91.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td18 {width: 96.5px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td19 {width: 77.5px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td20 {width: 72.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td21 {width: 72.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td22 {width: 91.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #8a929f #8a929f #f0f1f4 #8a929f; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td23 {width: 91.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td24 {width: 77.5px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td25 {width: 127.7px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #0e0e0e #0e0e0e #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td26 {width: 91.9px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #0e0e0e #0e0e0e #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td27 {width: 65.6px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #0e0e0e #0e0e0e #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td28 {width: 108.9px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #0e0e0e #0e0e0e #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td29 {width: 77.5px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #0e0e0e #0e0e0e #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td30 {width: 72.4px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #0e0e0e #0e0e0e #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td31 {width: 111.4px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #0e0e0e #0e0e0e #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td32 {width: 91.2px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #0e0e0e #0e0e0e #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td33 {width: 96.5px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #0e0e0e #0e0e0e #0e0e0e; padding: 10.0px 14.0px 10.0px 14.0px}
-    td.td34 {width: 123.7px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td35 {width: 78.2px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td36 {width: 75.1px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td37 {width: 76.7px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td38 {width: 75.0px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td39 {width: 79.4px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td40 {width: 87.9px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td41 {width: 68.4px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td42 {width: 104.9px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td43 {width: 769.1px; background-color: #f7f9fa; border-style: solid; border-width: 1.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #8a929f #8a929f #8a929f; padding: 5.0px 12.0px 5.0px 12.0px}
-    td.td44 {width: 123.7px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td45 {width: 78.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td46 {width: 75.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td47 {width: 76.7px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td48 {width: 75.0px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td49 {width: 79.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td50 {width: 87.9px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #0e0e0e #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td51 {width: 68.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td52 {width: 104.9px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #0e0e0e #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td53 {width: 78.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td54 {width: 79.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td55 {width: 68.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td56 {width: 123.7px; background-color: #f0f1f4; border-style: solid; border-width: 1.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td57 {width: 78.2px; background-color: #f0f1f4; border-style: solid; border-width: 1.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td58 {width: 75.1px; background-color: #f0f1f4; border-style: solid; border-width: 1.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td59 {width: 76.7px; background-color: #f0f1f4; border-style: solid; border-width: 1.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td60 {width: 75.0px; background-color: #f0f1f4; border-style: solid; border-width: 1.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td61 {width: 79.4px; background-color: #f0f1f4; border-style: solid; border-width: 1.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td62 {width: 87.9px; background-color: #f0f1f4; border-style: solid; border-width: 1.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td63 {width: 68.4px; background-color: #f0f1f4; border-style: solid; border-width: 1.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td64 {width: 104.9px; background-color: #f0f1f4; border-style: solid; border-width: 1.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td65 {width: 68.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td66 {width: 78.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #c7cbd3 #c7cbd3 #f0f1f4 #c7cbd3; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td67 {width: 75.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td68 {width: 79.4px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td69 {width: 123.7px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td70 {width: 78.2px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td71 {width: 75.1px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td72 {width: 76.7px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td73 {width: 75.0px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td74 {width: 79.4px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td75 {width: 87.9px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td76 {width: 68.4px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td77 {width: 104.9px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td78 {width: 101.0px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td79 {width: 99.9px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td80 {width: 98.1px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td81 {width: 97.8px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td82 {width: 95.2px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td83 {width: 64.1px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td84 {width: 784.6px; background-color: #f7f9fa; border-style: solid; border-width: 1.0px 0.0px 0.0px 0.0px; border-color: #dfe1e6 #8a929f #8a929f #8a929f; padding: 5.0px 12.0px 5.0px 12.0px}
-    td.td85 {width: 101.0px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td86 {width: 99.9px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td87 {width: 98.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td88 {width: 97.8px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td89 {width: 95.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td90 {width: 64.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td91 {width: 97.8px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td92 {width: 95.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td93 {width: 64.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td94 {width: 101.0px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td95 {width: 101.0px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #c7cbd3 #c7cbd3 #f0f1f4 #c7cbd3; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td96 {width: 99.9px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td97 {width: 95.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td98 {width: 64.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td99 {width: 101.0px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td100 {width: 99.9px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td101 {width: 98.1px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td102 {width: 97.8px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td103 {width: 95.2px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td104 {width: 64.1px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td105 {width: 163.1px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td106 {width: 93.8px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td107 {width: 93.9px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td108 {width: 89.1px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td109 {width: 79.9px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td110 {width: 111.2px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td111 {width: 103.0px; background-color: #f9f9f9; border-style: solid; border-width: 0.0px 0.0px 2.0px 0.0px; border-color: #8a929f #8a929f #dfe1e6 #8a929f; padding: 8.0px 12.0px 8.0px 12.0px}
-    td.td112 {width: 163.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td113 {width: 93.8px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td114 {width: 93.9px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #0e0e0e #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td115 {width: 89.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td116 {width: 79.9px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td117 {width: 111.2px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #2a3140 #2a3140 #f0f1f4 #2a3140; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td118 {width: 103.0px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #8a929f #8a929f #f0f1f4 #8a929f; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td119 {width: 103.0px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #1b963a #1b963a #f0f1f4 #1b963a; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td120 {width: 89.1px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td121 {width: 79.9px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td122 {width: 103.0px; border-style: solid; border-width: 0.0px 0.0px 1.0px 0.0px; border-color: #d10e1d #d10e1d #f0f1f4 #d10e1d; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td123 {width: 163.1px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td124 {width: 93.8px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td125 {width: 93.9px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td126 {width: 89.1px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td127 {width: 79.9px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td128 {width: 111.2px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-    td.td129 {width: 103.0px; background-color: #f7f9fa; border-style: solid; border-width: 2.0px 0.0px 1.0px 0.0px; border-color: #dfe1e6 #0e0e0e #f0f1f4 #0e0e0e; padding: 9.0px 12.0px 9.0px 12.0px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UUPZ — Reporte Ingresos 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #f5f6fa; color: #111; font-family: -apple-system,'Segoe UI',sans-serif; font-size: 13px; }
+.page { max-width: 1120px; margin: 0 auto; padding: 28px 32px 60px; }
+
+/* ─── HEADER ─── */
+.header {
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+  padding: 18px 24px; margin-bottom: 20px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.header h1 { font-size: 20px; font-weight: 700; }
+.header p  { font-size: 11px; color: #6b7280; margin-top: 3px; }
+.pills { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.pill { display:inline-flex; align-items:center; gap:4px; padding:2px 10px; border-radius:20px; font-size:10px; font-weight:600; border:1px solid; }
+.dot { width:7px; height:7px; border-radius:50%; }
+.header-right { text-align:right; }
+.date-badge { background:#f9fafb; border:1px solid #e5e7eb; border-radius:8px; padding:6px 14px; font-size:11px; color:#374151; }
+.date-badge strong { display:block; font-size:13px; color:#111; }
+.nav-btn {
+  display:inline-flex; align-items:center; gap:6px;
+  background:#111; color:#fff; border-radius:8px;
+  padding:8px 16px; font-size:11px; font-weight:700;
+  text-decoration:none; letter-spacing:.3px;
+  border:none; cursor:pointer; margin-top:8px;
+  transition:background .15s;
+}
+.nav-btn:hover { background:#374151; }
+.nav-btn svg { flex-shrink:0; }
+
+/* ─── SECTION LABEL ─── */
+.sec-label {
+  font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+  color: #9ca3af; margin-bottom: 10px; margin-top: 22px;
+  display: flex; align-items: center; gap: 8px;
+}
+.sec-label::after { content:''; flex:1; height:1px; background:#e5e7eb; }
+
+/* ─── KPI GRID ─── */
+.kpi5 { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+.kpi3 { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.kpi2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+
+.kpi {
+  background:#fff; border:1px solid #e5e7eb; border-radius:10px;
+  padding:14px 16px; border-top:3px solid transparent;
+}
+.kpi-label { font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; color:#9ca3af; margin-bottom:7px; }
+.kpi-value { font-size:26px; font-weight:700; line-height:1; color:#111; }
+.kpi-value.md { font-size:20px; }
+.kpi-value.lg { font-size:30px; }
+.kpi-sub   { font-size:11px; color:#6b7280; margin-top:4px; }
+.kpi-delta { font-size:11px; font-weight:700; margin-top:3px; }
+.green { color:#16a34a; } .red { color:#dc2626; } .gray { color:#9ca3af; } .amber { color:#d97706; }
+
+/* Status dots */
+.status { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; }
+.s-green  { background:#22c55e; }
+.s-red    { background:#ef4444; }
+.s-amber  { background:#f59e0b; }
+.s-gray   { background:#9ca3af; }
+
+/* ─── SCORECARD ─── */
+.scorecard {
+  background:#fff; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden;
+}
+.scorecard table { width:100%; border-collapse:collapse; font-size:12px; }
+.scorecard thead th {
+  background:#fafafa; padding:8px 14px; text-align:right;
+  font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:.4px;
+  color:#9ca3af; border-bottom:2px solid #e5e7eb;
+}
+.scorecard thead th:first-child { text-align:left; }
+.scorecard tbody td { padding:10px 14px; text-align:right; border-bottom:1px solid #f3f4f6; }
+.scorecard tbody td:first-child { text-align:left; }
+.scorecard tbody tr:last-child td { border-bottom:none; }
+.scorecard tbody tr:hover td { background:#fafafa; }
+.cn { display:flex; align-items:center; gap:7px; font-weight:600; }
+.cdot { width:9px; height:9px; border-radius:50%; flex-shrink:0; }
+.bold { font-weight:700; color:#111; }
+.hi   { font-weight:700; color:#16a34a; }
+.lo   { color:#dc2626; font-weight:600; }
+.zero { color:#d1d5db; }
+.tag  { display:inline-flex; align-items:center; gap:4px; padding:2px 8px; border-radius:6px; font-size:10px; font-weight:700; }
+.tag-green  { background:#dcfce7; color:#15803d; }
+.tag-red    { background:#fee2e2; color:#b91c1c; }
+.tag-amber  { background:#fef9c3; color:#a16207; }
+.tag-gray   { background:#f3f4f6; color:#6b7280; }
+
+/* Mini bar */
+.mini-bar-bg   { background:#f3f4f6; border-radius:4px; height:6px; width:80px; display:inline-block; vertical-align:middle; }
+.mini-bar-fill { height:6px; border-radius:4px; }
+
+/* ─── TABLE ─── */
+.tbl-wrap { background:#fff; border:1px solid #e5e7eb; border-radius:10px; overflow:hidden; }
+table { width:100%; border-collapse:collapse; font-size:12px; }
+thead th {
+  background:#fafafa; padding:8px 12px; text-align:right;
+  font-size:9.5px; font-weight:700; text-transform:uppercase; letter-spacing:.4px;
+  color:#9ca3af; border-bottom:2px solid #e5e7eb;
+}
+thead th:first-child { text-align:left; }
+tbody td { padding:9px 12px; text-align:right; border-bottom:1px solid #f3f4f6; color:#374151; }
+tbody td:first-child { text-align:left; }
+tbody tr:hover td { background:#fafafa; }
+.gh td { background:#f9fafb; font-size:9px; font-weight:800; text-transform:uppercase; letter-spacing:.6px; color:#9ca3af; padding:5px 12px; border-top:1px solid #e5e7eb; border-bottom:none; }
+.st td { background:#f3f4f6; font-weight:600; color:#374151; border-top:1px solid #e5e7eb; font-size:11.5px; }
+.tt td { background:#f9fafb; font-weight:700; color:#111; border-top:2px solid #e5e7eb; font-size:13px; }
+
+/* ─── CHARTS ─── */
+.g2  { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.g21 { display:grid; grid-template-columns:1.5fr 1fr; gap:14px; }
+.chart-box { background:#fff; border:1px solid #e5e7eb; border-radius:10px; padding:18px 20px; }
+.cb-title { font-size:12px; font-weight:700; color:#111; margin-bottom:2px; }
+.cb-sub   { font-size:10px; color:#9ca3af; margin-bottom:14px; }
+
+/* ─── INSIGHTS ─── */
+.ins-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+.ins { background:#fff; border:1px solid #e5e7eb; border-radius:8px; padding:12px 14px; border-left:3px solid; }
+.ins-title { font-size:9.5px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; margin-bottom:5px; color:#374151; }
+.ins-body  { font-size:11.5px; color:#374151; line-height:1.55; }
+
+/* ─── FOOTER ─── */
+hr { border:none; border-top:1px solid #e5e7eb; margin:24px 0; }
+.footer { font-size:10px; color:#9ca3af; text-align:center; margin-top:32px; }
+</style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 0.0px 0.0px; font: 20.0px 'Helvetica Neue'; color: #0e0e0e; -webkit-text-stroke: #0e0e0e"><span class="s1">🛒</span><span class="s2"><b> UUPZ — Reporte Ingresos 2026</b><b></b></span></h1>
-<p class="p2"><span class="s2">Deviart S.A. de C.V. · Canal digital y distribución · Fuente: VENTAS EXTERNAS.xlsx · Hojas CONCENTRADO + ANALISIS</span></p>
-<p class="p3"><span class="s3"></span><br></p>
-<p class="p4"><span class="s3">Distribuidores</span></p>
-<p class="p5"><span class="s3"></span><br></p>
-<p class="p6"><span class="s3">Padcolor</span></p>
-<p class="p7"><span class="s3"></span><br></p>
-<p class="p8"><span class="s3">Impresión</span></p>
-<p class="p9"><span class="s3"></span><br></p>
-<p class="p10"><span class="s4">Starbucks.</span></p>
-<p class="p11"><span class="s5"><b>Ene – May 2026</b><b></b></span></p>
-<p class="p12"><span class="s3">5 meses completos · Jun–Dic pendientes</span></p>
-<p class="p13"><span class="s3"><a href="https://jackyfuentes-emakers.github.io/reportes-uupz/global_2026_ejecutivo.html?sem1jun"><b></b></a></span><br></p>
-<p class="p14"><span class="s6"><a href="https://jackyfuentes-emakers.github.io/reportes-uupz/global_2026_ejecutivo.html?sem1jun"><b>Ver Reporte Plataformas</b><span class="s3"><b></b></span></a></span></p>
-<p class="p15"><span class="s3">INDICADORES PRINCIPALES</span></p>
-<p class="p16"><span class="s2"><b>INGRESOS TOTALES ENE–MAY</b><b></b></span></p>
-<p class="p17"><span class="s2"><b>$19.47M</b><b></b></span></p>
-<p class="p2"><span class="s2">MXN sin IVA · Sin imp + Impresos</span></p>
-<p class="p18"><span class="s2"><b>Sin imp $15.96M · Imp $3.50M</b><b></b></span></p>
-<p class="p16"><span class="s2"><b>PIEZAS VENDIDAS ENE–MAY</b><b></b></span></p>
-<p class="p17"><span class="s2"><b>1,543,144</b><b></b></span></p>
-<p class="p2"><span class="s2">Sin imp 1,331,299 · Imp 211,845</span></p>
-<p class="p18"><span class="s2"><b>Promedio ~257K pzas / mes</b><b></b></span></p>
-<p class="p16"><span class="s2"><b>PRECIO PROMEDIO / PIEZA</b><b></b></span></p>
-<p class="p19"><span class="s2"><b>$12.62</b><b></b></span></p>
-<p class="p2"><span class="s2">Impresos $16.59 · Sin imp $11.99</span></p>
-<p class="p20"><span class="s2"><b>WEB $15.50 · ML $9.32 ↓</b><b></b></span></p>
-<p class="p16"><span class="s2"><b>CANAL LÍDER EN INGRESOS</b><b></b></span></p>
-<p class="p1"><span class="s2">SHEIN</span></p>
-<p class="p2"><span class="s2">$4.91M · 25.2% del total</span></p>
-<p class="p18"><span class="s2"><b>↑ 387K pzas · $12.68/pza</b><b></b></span></p>
-<p class="p16"><span class="s2"><b>MEJOR MES (INGRESOS TOTALES)</b><b></b></span></p>
-<p class="p1"><span class="s2">Febrero</span></p>
-<p class="p2"><span class="s2">$4.35M · 321K pzas</span></p>
-<p class="p21"><span class="s2"><b>Starbucks +105K pzas ese mes</b><b></b></span></p>
-<p class="p15"><span class="s3">SCORECARD POR CANAL · ENE–MAY 2026</span></p>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="middle" class="td1">
-        <p class="p16"><span class="s2"><b>CANAL</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td2">
-        <p class="p22"><span class="s2"><b>PIEZAS</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td3">
-        <p class="p22"><span class="s2"><b>% VOL.</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td4">
-        <p class="p22"><span class="s2"><b>INGRESOS MXN</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td5">
-        <p class="p22"><span class="s2"><b>% REVENUE</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td6">
-        <p class="p22"><span class="s2"><b>$/PZA</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td7">
-        <p class="p22"><span class="s2"><b>PARTICIPACIÓN</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td8">
-        <p class="p22"><span class="s2"><b>VS MAY ANT.</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td9">
-        <p class="p22"><span class="s2"><b>STATUS</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td10">
-        <p class="p23"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">SHEIN</span></p>
-      </td>
-      <td valign="middle" class="td11">
-        <p class="p25"><span class="s2"><b>387,220</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td12">
-        <p class="p26"><span class="s2">26.0%</span></p>
-      </td>
-      <td valign="middle" class="td13">
-        <p class="p25"><span class="s2"><b>$4,911,929</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td14">
-        <p class="p27"><span class="s2"><b>26.4%</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td15">
-        <p class="p26"><span class="s2">$12.68</span></p>
-      </td>
-      <td valign="middle" class="td16">
-        <p class="p28"><span class="s3"></span><br></p>
-      </td>
-      <td valign="middle" class="td17">
-        <p class="p27"><span class="s2"><b>+10% ↑</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td18">
-        <p class="p29"><span class="s7">🟢</span><span class="s8"><b> Creciendo</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td10">
-        <p class="p30"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Mercado Libre</span></p>
-      </td>
-      <td valign="middle" class="td11">
-        <p class="p25"><span class="s2"><b>409,205</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td12">
-        <p class="p26"><span class="s2">27.5%</span></p>
-      </td>
-      <td valign="middle" class="td13">
-        <p class="p25"><span class="s2"><b>$3,814,590</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td19">
-        <p class="p26"><span class="s2">20.5%</span></p>
-      </td>
-      <td valign="middle" class="td20">
-        <p class="p31"><span class="s2">$9.32</span></p>
-      </td>
-      <td valign="middle" class="td16">
-        <p class="p32"><span class="s3"></span><br></p>
-      </td>
-      <td valign="middle" class="td17">
-        <p class="p27"><span class="s2"><b>+14% ↑</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td18">
-        <p class="p33"><span class="s9">🟡</span><span class="s10"><b> Precio bajo</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td10">
-        <p class="p34"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">WEB</span></p>
-      </td>
-      <td valign="middle" class="td11">
-        <p class="p25"><span class="s2"><b>231,538</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td12">
-        <p class="p26"><span class="s2">15.0%</span></p>
-      </td>
-      <td valign="middle" class="td13">
-        <p class="p25"><span class="s2"><b>$3,587,784</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td19">
-        <p class="p26"><span class="s2">18.4%</span></p>
-      </td>
-      <td valign="middle" class="td21">
-        <p class="p27"><span class="s2"><b>$15.50</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td16">
-        <p class="p35"><span class="s3"></span><br></p>
-      </td>
-      <td valign="middle" class="td17">
-        <p class="p27"><span class="s2"><b>+22% ↑</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td18">
-        <p class="p29"><span class="s7">🟢</span><span class="s8"><b> Normal</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td10">
-        <p class="p36"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Distribuidores</span></p>
-      </td>
-      <td valign="middle" class="td11">
-        <p class="p25"><span class="s2"><b>193,576</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td12">
-        <p class="p26"><span class="s2">13.0%</span></p>
-      </td>
-      <td valign="middle" class="td13">
-        <p class="p25"><span class="s2"><b>$2,431,509</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td19">
-        <p class="p26"><span class="s2">13.1%</span></p>
-      </td>
-      <td valign="middle" class="td15">
-        <p class="p26"><span class="s2">$12.56</span></p>
-      </td>
-      <td valign="middle" class="td16">
-        <p class="p37"><span class="s3"></span><br></p>
-      </td>
-      <td valign="middle" class="td17">
-        <p class="p27"><span class="s2"><b>+8% ↑</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td18">
-        <p class="p29"><span class="s7">🟢</span><span class="s8"><b> Estable</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td10">
-        <p class="p38"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Starbucks</span></p>
-      </td>
-      <td valign="middle" class="td11">
-        <p class="p25"><span class="s2"><b>142,414</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td12">
-        <p class="p26"><span class="s2">9.6%</span></p>
-      </td>
-      <td valign="middle" class="td13">
-        <p class="p25"><span class="s2"><b>$2,210,414</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td19">
-        <p class="p26"><span class="s2">11.9%</span></p>
-      </td>
-      <td valign="middle" class="td15">
-        <p class="p26"><span class="s2">$15.52</span></p>
-      </td>
-      <td valign="middle" class="td16">
-        <p class="p39"><span class="s3"></span><br></p>
-      </td>
-      <td valign="middle" class="td22">
-        <p class="p40"><span class="s2">Esporádico</span></p>
-      </td>
-      <td valign="middle" class="td18">
-        <p class="p41"><span class="s11">⚪</span><span class="s12"><b> Pedidos clave</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td10">
-        <p class="p42"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Amazon</span></p>
-      </td>
-      <td valign="middle" class="td11">
-        <p class="p25"><span class="s2"><b>61,280</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td12">
-        <p class="p26"><span class="s2">4.1%</span></p>
-      </td>
-      <td valign="middle" class="td13">
-        <p class="p25"><span class="s2"><b>$825,996</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td19">
-        <p class="p26"><span class="s2">4.4%</span></p>
-      </td>
-      <td valign="middle" class="td15">
-        <p class="p26"><span class="s2">$13.48</span></p>
-      </td>
-      <td valign="middle" class="td16">
-        <p class="p43"><span class="s3"></span><br></p>
-      </td>
-      <td valign="middle" class="td23">
-        <p class="p31"><span class="s2">−29% ↓</span></p>
-      </td>
-      <td valign="middle" class="td18">
-        <p class="p33"><span class="s9">🟡</span><span class="s10"><b> Estable</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td10">
-        <p class="p44"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Impresión</span></p>
-      </td>
-      <td valign="middle" class="td11">
-        <p class="p25"><span class="s2"><b>69,431</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td12">
-        <p class="p26"><span class="s2">4.7%</span></p>
-      </td>
-      <td valign="middle" class="td13">
-        <p class="p25"><span class="s2"><b>$1,292,568</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td19">
-        <p class="p26"><span class="s2">7.0%</span></p>
-      </td>
-      <td valign="middle" class="td21">
-        <p class="p27"><span class="s2"><b>$18.67 ↑</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td16">
-        <p class="p45"><span class="s3"></span><br></p>
-      </td>
-      <td valign="middle" class="td17">
-        <p class="p27"><span class="s2"><b>+60% ↑</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td18">
-        <p class="p29"><span class="s7">🟢</span><span class="s8"><b> Mayor margen</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td10">
-        <p class="p46"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Padcolor</span></p>
-      </td>
-      <td valign="middle" class="td11">
-        <p class="p25"><span class="s2"><b>48,480</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td12">
-        <p class="p26"><span class="s2">3.3%</span></p>
-      </td>
-      <td valign="middle" class="td13">
-        <p class="p25"><span class="s2"><b>$392,910</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td24">
-        <p class="p31"><span class="s2">2.1%</span></p>
-      </td>
-      <td valign="middle" class="td20">
-        <p class="p31"><span class="s2">$8.09 ↓</span></p>
-      </td>
-      <td valign="middle" class="td16">
-        <p class="p47"><span class="s3"></span><br></p>
-      </td>
-      <td valign="middle" class="td23">
-        <p class="p31"><span class="s2">−67% ↓</span></p>
-      </td>
-      <td valign="middle" class="td18">
-        <p class="p48"><span class="s13">🔴</span><span class="s14"><b> A la baja</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td25">
-        <p class="p49"><span class="s2"><b>GRAN TOTAL</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td26">
-        <p class="p11"><span class="s2"><b>1,543,144</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td27">
-        <p class="p11"><span class="s2"><b>100%</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td28">
-        <p class="p11"><span class="s2"><b>$19,467,700</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td29">
-        <p class="p11"><span class="s2"><b>100%</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td30">
-        <p class="p11"><span class="s2"><b>$12.62</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td31">
-        <p class="p50"><span class="s3"><b></b></span><br></p>
-      </td>
-      <td valign="middle" class="td32">
-        <p class="p50"><span class="s3"><b></b></span><br></p>
-      </td>
-      <td valign="middle" class="td33">
-        <p class="p50"><span class="s3"><b></b></span><br></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p class="p15"><span class="s3">DETALLE MENSUAL · PIEZAS E INGRESOS POR CANAL</span></p>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="middle" class="td34">
-        <p class="p16"><span class="s2"><b>CANAL</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td35">
-        <p class="p22"><span class="s2"><b>ENE</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td36">
-        <p class="p22"><span class="s2"><b>FEB</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td37">
-        <p class="p22"><span class="s2"><b>MAR</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td38">
-        <p class="p22"><span class="s2"><b>ABR</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td39">
-        <p class="p22"><span class="s2"><b>MAY</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td40">
-        <p class="p22"><span class="s2"><b>TOTAL PZAS</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td41">
-        <p class="p22"><span class="s2"><b>$/PZA</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td42">
-        <p class="p22"><span class="s2"><b>INGRESOS MXN</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="9" valign="middle" class="td43">
-        <p class="p15"><span class="s2">SIN IMPRESIÓN · DISTRIBUCIÓN FÍSICA</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p36"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Distribuidores</span></p>
-      </td>
-      <td valign="middle" class="td45">
-        <p class="p26"><span class="s2">44,089</span></p>
-      </td>
-      <td valign="middle" class="td46">
-        <p class="p26"><span class="s2">24,915</span></p>
-      </td>
-      <td valign="middle" class="td47">
-        <p class="p26"><span class="s2">41,802</span></p>
-      </td>
-      <td valign="middle" class="td48">
-        <p class="p26"><span class="s2">23,816</span></p>
-      </td>
-      <td valign="middle" class="td49">
-        <p class="p27"><span class="s2"><b>58,954</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td50">
-        <p class="p25"><span class="s2"><b>193,576</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td51">
-        <p class="p26"><span class="s2">$12.56</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$2,431,509</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p46"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Padcolor</span></p>
-      </td>
-      <td valign="middle" class="td53">
-        <p class="p27"><span class="s2"><b>14,470</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td46">
-        <p class="p26"><span class="s2">8,510</span></p>
-      </td>
-      <td valign="middle" class="td47">
-        <p class="p26"><span class="s2">11,500</span></p>
-      </td>
-      <td valign="middle" class="td48">
-        <p class="p26"><span class="s2">9,280</span></p>
-      </td>
-      <td valign="middle" class="td54">
-        <p class="p31"><span class="s2">4,720</span></p>
-      </td>
-      <td valign="middle" class="td50">
-        <p class="p25"><span class="s2"><b>48,480</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td55">
-        <p class="p31"><span class="s2">$8.09</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$392,910</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td56">
-        <p class="p51"><span class="s2">Subtotal Distribución</span></p>
-      </td>
-      <td valign="middle" class="td57">
-        <p class="p52"><span class="s2">58,559</span></p>
-      </td>
-      <td valign="middle" class="td58">
-        <p class="p52"><span class="s2">33,425</span></p>
-      </td>
-      <td valign="middle" class="td59">
-        <p class="p52"><span class="s2">53,302</span></p>
-      </td>
-      <td valign="middle" class="td60">
-        <p class="p52"><span class="s2">33,096</span></p>
-      </td>
-      <td valign="middle" class="td61">
-        <p class="p52"><span class="s2">63,674</span></p>
-      </td>
-      <td valign="middle" class="td62">
-        <p class="p52"><span class="s2">242,056</span></p>
-      </td>
-      <td valign="middle" class="td63">
-        <p class="p52"><span class="s2">$11.55</span></p>
-      </td>
-      <td valign="middle" class="td64">
-        <p class="p52"><span class="s2">$2,824,419</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="9" valign="middle" class="td43">
-        <p class="p15"><span class="s2">SIN IMPRESIÓN · PLATAFORMAS DIGITALES</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p23"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">SHEIN</span></p>
-      </td>
-      <td valign="middle" class="td45">
-        <p class="p26"><span class="s2">88,010</span></p>
-      </td>
-      <td valign="middle" class="td46">
-        <p class="p26"><span class="s2">62,450</span></p>
-      </td>
-      <td valign="middle" class="td47">
-        <p class="p26"><span class="s2">68,740</span></p>
-      </td>
-      <td valign="middle" class="td48">
-        <p class="p26"><span class="s2">71,060</span></p>
-      </td>
-      <td valign="middle" class="td49">
-        <p class="p27"><span class="s2"><b>96,960</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td50">
-        <p class="p25"><span class="s2"><b>387,220</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td51">
-        <p class="p26"><span class="s2">$12.68</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$4,911,929</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p30"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Mercado Libre</span></p>
-      </td>
-      <td valign="middle" class="td45">
-        <p class="p26"><span class="s2">78,317</span></p>
-      </td>
-      <td valign="middle" class="td46">
-        <p class="p26"><span class="s2">69,467</span></p>
-      </td>
-      <td valign="middle" class="td47">
-        <p class="p26"><span class="s2">76,620</span></p>
-      </td>
-      <td valign="middle" class="td48">
-        <p class="p26"><span class="s2">89,470</span></p>
-      </td>
-      <td valign="middle" class="td49">
-        <p class="p27"><span class="s2"><b>95,331</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td50">
-        <p class="p25"><span class="s2"><b>409,205</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td55">
-        <p class="p31"><span class="s2">$9.32</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$3,814,590</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p42"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Amazon</span></p>
-      </td>
-      <td valign="middle" class="td53">
-        <p class="p27"><span class="s2"><b>13,700</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td46">
-        <p class="p26"><span class="s2">11,230</span></p>
-      </td>
-      <td valign="middle" class="td47">
-        <p class="p26"><span class="s2">12,500</span></p>
-      </td>
-      <td valign="middle" class="td48">
-        <p class="p26"><span class="s2">11,700</span></p>
-      </td>
-      <td valign="middle" class="td54">
-        <p class="p31"><span class="s2">12,150</span></p>
-      </td>
-      <td valign="middle" class="td50">
-        <p class="p25"><span class="s2"><b>61,280</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td51">
-        <p class="p26"><span class="s2">$13.48</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$825,996</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p34"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">WEB</span></p>
-      </td>
-      <td valign="middle" class="td53">
-        <p class="p27"><span class="s2"><b>55,594</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td46">
-        <p class="p26"><span class="s2">32,422</span></p>
-      </td>
-      <td valign="middle" class="td47">
-        <p class="p26"><span class="s2">42,914</span></p>
-      </td>
-      <td valign="middle" class="td48">
-        <p class="p26"><span class="s2">45,295</span></p>
-      </td>
-      <td valign="middle" class="td49">
-        <p class="p27"><span class="s2"><b>55,313</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td50">
-        <p class="p25"><span class="s2"><b>231,538</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td65">
-        <p class="p27"><span class="s2"><b>$15.50</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$3,587,784</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td56">
-        <p class="p51"><span class="s2">Subtotal Plataformas</span></p>
-      </td>
-      <td valign="middle" class="td57">
-        <p class="p52"><span class="s2">235,621</span></p>
-      </td>
-      <td valign="middle" class="td58">
-        <p class="p52"><span class="s2">175,569</span></p>
-      </td>
-      <td valign="middle" class="td59">
-        <p class="p52"><span class="s2">200,774</span></p>
-      </td>
-      <td valign="middle" class="td60">
-        <p class="p52"><span class="s2">217,525</span></p>
-      </td>
-      <td valign="middle" class="td61">
-        <p class="p52"><span class="s2">259,754</span></p>
-      </td>
-      <td valign="middle" class="td62">
-        <p class="p52"><span class="s2">1,089,243</span></p>
-      </td>
-      <td valign="middle" class="td63">
-        <p class="p52"><span class="s2">$12.06</span></p>
-      </td>
-      <td valign="middle" class="td64">
-        <p class="p52"><span class="s2">$13,140,299</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="9" valign="middle" class="td43">
-        <p class="p15"><span class="s2">IMPRESOS</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p44"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Impresión</span></p>
-      </td>
-      <td valign="middle" class="td53">
-        <p class="p27"><span class="s2"><b>25,300</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td46">
-        <p class="p26"><span class="s2">7,080</span></p>
-      </td>
-      <td valign="middle" class="td47">
-        <p class="p26"><span class="s2">10,051</span></p>
-      </td>
-      <td valign="middle" class="td48">
-        <p class="p26"><span class="s2">21,000</span></p>
-      </td>
-      <td valign="middle" class="td54">
-        <p class="p31"><span class="s2">6,000</span></p>
-      </td>
-      <td valign="middle" class="td50">
-        <p class="p25"><span class="s2"><b>69,431</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td65">
-        <p class="p27"><span class="s2"><b>$18.67</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$1,292,568</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p38"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Starbucks</span></p>
-      </td>
-      <td valign="middle" class="td66">
-        <p class="p53"><span class="s2">—</span></p>
-      </td>
-      <td valign="middle" class="td67">
-        <p class="p27"><span class="s2"><b>105,109</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td47">
-        <p class="p26"><span class="s2">3,795</span></p>
-      </td>
-      <td valign="middle" class="td48">
-        <p class="p26"><span class="s2">25,920</span></p>
-      </td>
-      <td valign="middle" class="td68">
-        <p class="p26"><span class="s2">7,590</span></p>
-      </td>
-      <td valign="middle" class="td50">
-        <p class="p25"><span class="s2"><b>142,414</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td51">
-        <p class="p26"><span class="s2">$15.52</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$2,210,414</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td56">
-        <p class="p51"><span class="s2">Subtotal Impresos</span></p>
-      </td>
-      <td valign="middle" class="td57">
-        <p class="p52"><span class="s2">25,300</span></p>
-      </td>
-      <td valign="middle" class="td58">
-        <p class="p52"><span class="s2">112,189</span></p>
-      </td>
-      <td valign="middle" class="td59">
-        <p class="p52"><span class="s2">13,846</span></p>
-      </td>
-      <td valign="middle" class="td60">
-        <p class="p52"><span class="s2">46,920</span></p>
-      </td>
-      <td valign="middle" class="td61">
-        <p class="p52"><span class="s2">13,590</span></p>
-      </td>
-      <td valign="middle" class="td62">
-        <p class="p52"><span class="s2">211,845</span></p>
-      </td>
-      <td valign="middle" class="td63">
-        <p class="p52"><span class="s2">$16.59</span></p>
-      </td>
-      <td valign="middle" class="td64">
-        <p class="p52"><span class="s2">$3,502,982</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td69">
-        <p class="p49"><span class="s2"><b>GRAN TOTAL</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td70">
-        <p class="p11"><span class="s2"><b>319,480</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td71">
-        <p class="p11"><span class="s2"><b>321,183</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td72">
-        <p class="p11"><span class="s2"><b>267,922</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td73">
-        <p class="p11"><span class="s2"><b>297,541</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td74">
-        <p class="p11"><span class="s2"><b>323,428</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td75">
-        <p class="p11"><span class="s2"><b>1,543,144</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td76">
-        <p class="p11"><span class="s2"><b>$12.62</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td77">
-        <p class="p11"><span class="s2"><b>$19,467,700</b><b></b></span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="middle" class="td34">
-        <p class="p16"><span class="s2"><b>CANAL · INGRESOS MXN SIN IVA</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td78">
-        <p class="p22"><span class="s2"><b>ENERO</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td79">
-        <p class="p22"><span class="s2"><b>FEBRERO</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td80">
-        <p class="p22"><span class="s2"><b>MARZO</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td81">
-        <p class="p22"><span class="s2"><b>ABRIL</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td82">
-        <p class="p22"><span class="s2"><b>MAYO</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td42">
-        <p class="p22"><span class="s2"><b>TOTAL</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td83">
-        <p class="p22"><span class="s2"><b>% DEL TOTAL</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="8" valign="middle" class="td84">
-        <p class="p15"><span class="s2">SIN IMPRESIÓN</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p23"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">SHEIN</span></p>
-      </td>
-      <td valign="middle" class="td85">
-        <p class="p26"><span class="s2">$1,108,026</span></p>
-      </td>
-      <td valign="middle" class="td86">
-        <p class="p26"><span class="s2">$789,831</span></p>
-      </td>
-      <td valign="middle" class="td87">
-        <p class="p26"><span class="s2">$876,787</span></p>
-      </td>
-      <td valign="middle" class="td88">
-        <p class="p26"><span class="s2">$902,514</span></p>
-      </td>
-      <td valign="middle" class="td89">
-        <p class="p27"><span class="s2"><b>$1,234,771</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$4,911,929</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td90">
-        <p class="p27"><span class="s2"><b>26.4%</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p30"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Mercado Libre</span></p>
-      </td>
-      <td valign="middle" class="td85">
-        <p class="p26"><span class="s2">$727,541</span></p>
-      </td>
-      <td valign="middle" class="td86">
-        <p class="p26"><span class="s2">$648,446</span></p>
-      </td>
-      <td valign="middle" class="td87">
-        <p class="p26"><span class="s2">$726,123</span></p>
-      </td>
-      <td valign="middle" class="td91">
-        <p class="p27"><span class="s2"><b>$855,563</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td92">
-        <p class="p26"><span class="s2">$856,917</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$3,814,590</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td93">
-        <p class="p26"><span class="s2">20.5%</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p34"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">WEB</span></p>
-      </td>
-      <td valign="middle" class="td94">
-        <p class="p27"><span class="s2"><b>$771,857</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td86">
-        <p class="p26"><span class="s2">$451,535</span></p>
-      </td>
-      <td valign="middle" class="td87">
-        <p class="p26"><span class="s2">$756,128</span></p>
-      </td>
-      <td valign="middle" class="td88">
-        <p class="p26"><span class="s2">$722,903</span></p>
-      </td>
-      <td valign="middle" class="td89">
-        <p class="p27"><span class="s2"><b>$885,361</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$3,587,784</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td93">
-        <p class="p26"><span class="s2">18.4%</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p36"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Distribuidores</span></p>
-      </td>
-      <td valign="middle" class="td85">
-        <p class="p26"><span class="s2">$548,816</span></p>
-      </td>
-      <td valign="middle" class="td86">
-        <p class="p26"><span class="s2">$319,286</span></p>
-      </td>
-      <td valign="middle" class="td87">
-        <p class="p26"><span class="s2">$514,942</span></p>
-      </td>
-      <td valign="middle" class="td88">
-        <p class="p26"><span class="s2">$312,864</span></p>
-      </td>
-      <td valign="middle" class="td89">
-        <p class="p27"><span class="s2"><b>$735,601</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$2,431,509</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td93">
-        <p class="p26"><span class="s2">13.1%</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="8" valign="middle" class="td84">
-        <p class="p15"><span class="s2">IMPRESOS</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p38"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Starbucks</span></p>
-      </td>
-      <td valign="middle" class="td95">
-        <p class="p53"><span class="s2">—</span></p>
-      </td>
-      <td valign="middle" class="td96">
-        <p class="p27"><span class="s2"><b>$1,771,409</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td87">
-        <p class="p26"><span class="s2">$49,335</span></p>
-      </td>
-      <td valign="middle" class="td88">
-        <p class="p26"><span class="s2">$291,000</span></p>
-      </td>
-      <td valign="middle" class="td92">
-        <p class="p26"><span class="s2">$98,670</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$2,210,414</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td93">
-        <p class="p26"><span class="s2">11.9%</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p44"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Impresión</span></p>
-      </td>
-      <td valign="middle" class="td94">
-        <p class="p27"><span class="s2"><b>$469,361</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td86">
-        <p class="p26"><span class="s2">$142,361</span></p>
-      </td>
-      <td valign="middle" class="td87">
-        <p class="p26"><span class="s2">$178,073</span></p>
-      </td>
-      <td valign="middle" class="td88">
-        <p class="p26"><span class="s2">$386,714</span></p>
-      </td>
-      <td valign="middle" class="td92">
-        <p class="p26"><span class="s2">$116,059</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$1,292,568</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td93">
-        <p class="p26"><span class="s2">7.0%</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p42"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Amazon</span></p>
-      </td>
-      <td valign="middle" class="td94">
-        <p class="p27"><span class="s2"><b>$206,777</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td86">
-        <p class="p26"><span class="s2">$155,742</span></p>
-      </td>
-      <td valign="middle" class="td87">
-        <p class="p26"><span class="s2">$152,684</span></p>
-      </td>
-      <td valign="middle" class="td88">
-        <p class="p26"><span class="s2">$158,594</span></p>
-      </td>
-      <td valign="middle" class="td92">
-        <p class="p26"><span class="s2">$152,199</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$825,996</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td93">
-        <p class="p26"><span class="s2">4.4%</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td44">
-        <p class="p46"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Padcolor</span></p>
-      </td>
-      <td valign="middle" class="td85">
-        <p class="p26"><span class="s2">$123,106</span></p>
-      </td>
-      <td valign="middle" class="td86">
-        <p class="p26"><span class="s2">$71,123</span></p>
-      </td>
-      <td valign="middle" class="td87">
-        <p class="p26"><span class="s2">$89,579</span></p>
-      </td>
-      <td valign="middle" class="td88">
-        <p class="p26"><span class="s2">$71,197</span></p>
-      </td>
-      <td valign="middle" class="td97">
-        <p class="p31"><span class="s2">$37,905</span></p>
-      </td>
-      <td valign="middle" class="td52">
-        <p class="p25"><span class="s2"><b>$392,910</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td98">
-        <p class="p31"><span class="s2">2.1%</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td69">
-        <p class="p49"><span class="s2"><b>GRAN TOTAL</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td99">
-        <p class="p11"><span class="s2"><b>$3,955,484</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td100">
-        <p class="p11"><span class="s2"><b>$4,349,733</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td101">
-        <p class="p11"><span class="s2"><b>$3,343,651</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td102">
-        <p class="p11"><span class="s2"><b>$3,701,349</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td103">
-        <p class="p11"><span class="s2"><b>$4,117,483</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td77">
-        <p class="p11"><span class="s2"><b>$19,467,700</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td104">
-        <p class="p11"><span class="s2"><b>100%</b><b></b></span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p class="p15"><span class="s3">EVOLUCIÓN MENSUAL E INGRESOS</span></p>
-<p class="p54"><span class="s2"><b>Ingresos por canal y mes (MXN sin IVA)</b><b></b></span></p>
-<p class="p55"><span class="s2">Barras apiladas · todos los canales</span></p>
-<p class="p54"><span class="s2"><b>Total mensual + $/pieza</b><b></b></span></p>
-<p class="p55"><span class="s2">Barra = ingresos · Línea naranja = precio prom.</span></p>
-<p class="p54"><span class="s2"><b>Volumen de piezas por canal</b><b></b></span></p>
-<p class="p55"><span class="s2">Total acumulado Ene–May · barras horizontales</span></p>
-<p class="p54"><span class="s2"><b>Precio promedio por canal ($/pza)</b><b></b></span></p>
-<p class="p55"><span class="s2">Mayor precio = mejor margen por unidad</span></p>
-<p class="p15"><span class="s3">ANÁLISIS EJECUTIVO · PUNTOS DE ACCIÓN</span></p>
-<p class="p56"><span class="s15">✅</span><span class="s16"> SHEIN — CANAL LÍDER EN REVENUE</span></p>
-<p class="p51"><span class="s16">Con <b>$4.91M (26.4%)</b> del total y crecimiento sostenido mes a mes (+10% May vs Ene). Priorizar inventario y publicaciones activas.</span></p>
-<p class="p56"><span class="s17">🔴</span><span class="s18"> WEB — CANAL A RECUPERAR YOY</span></p>
-<p class="p51"><span class="s18">Mayo recuperado: <b>55,313 pzas · $885K</b>. Sin embargo el acumulado Ene–May 2026 (231K pzas) sigue <b>−9.8% vs 2025</b> (256K pzas). Precio alto ($15.50/pza) lo hace estratégico: priorizar crecimiento de volumen.</span></p>
-<p class="p56"><span class="s19">🟡</span><span class="s20"> ML — MAYOR VOLUMEN, MENOR PRECIO</span></p>
-<p class="p51"><span class="s20">Lidera en piezas (409K) pero precio más bajo de plataformas (<b>$9.32/pza</b> vs $15.33 WEB). Oportunidad: bundles y modelos premium.</span></p>
-<p class="p56"><span class="s21">🔵</span><span class="s22"> IMPRESOS — PALANCA DE MARGEN</span></p>
-<p class="p51"><span class="s22">Precio más alto del portafolio (<b>$18.67/pza</b>), <b>+58% sobre el promedio</b>. Cada pieza impresa adicional mejora el margen sin aumentar volumen de producción base.</span></p>
-<p class="p56"><span class="s23">🟢</span><span class="s4"> STARBUCKS — PEDIDO PICO EN FEBRERO</span></p>
-<p class="p51"><span class="s4">Feb pico por <b>105K pzas Starbucks</b> a $16.85/pza. Pedidos esporádicos — no modelar flujo mensual sobre este evento. Mantener relación comercial.</span></p>
-<p class="p56"><span class="s24">🩷</span><span class="s25"> PADCOLOR — REVISAR RENTABILIDAD</span></p>
-<p class="p51"><span class="s25">Precio más bajo (<b>$8.09/pza</b>) y volumen cayendo −67% de Ene a May. Si tiene costos de serigrafía adicionales, el margen real puede ser negativo.</span></p>
-<p class="p15"><span class="s3">ANÁLISIS GENERAL · COMPARATIVO 2025 VS 2026 · HOJA ANALISIS</span></p>
-<p class="p16"><span class="s2"><b>TOTAL YTD 2026 (ENE–MAY)</b><b></b></span></p>
-<p class="p57"><span class="s2"><b>1,331,299</b><b></b></span></p>
-<p class="p2"><span class="s2">vs 896,950 mismo periodo 2025</span></p>
-<p class="p16"><span class="s2"><b>YOY ENE–MAY 2025 VS 2026</b><b></b></span></p>
-<p class="p58"><span class="s2"><b>▲ +48.4%</b><b></b></span></p>
-<p class="p2"><span class="s2">+434,349 vasos adicionales YTD</span></p>
-<p class="p16"><span class="s2"><b>CANAL CON MAYOR CRECIMIENTO %</b><b></b></span></p>
-<p class="p1"><span class="s2">SHEIN</span></p>
-<p class="p2"><span class="s2">77,340 → 387,220 · <b>+401%</b><b></b></span></p>
-<p class="p16"><span class="s2"><b>CANAL EN MAYOR CRECIMIENTO VOL.</b><b></b></span></p>
-<p class="p59"><span class="s2">ML</span></p>
-<p class="p2"><span class="s2">259,750 → 409,205 · <b>+57.5%</b><b></b></span></p>
-<p class="p16"><span class="s2"><b>CANAL A LA BAJA</b><b></b></span></p>
-<p class="p60"><span class="s2">WEB</span></p>
-<p class="p2"><span class="s2">256,628 → 231,538 · <b>−9.8%</b><b></b></span></p>
-<p class="p54"><span class="s2"><b>Tendencia histórica por canal — 2021 a 2026</b><b></b></span></p>
-<p class="p55"><span class="s2">Vasos anuales por canal · *2026 parcial Ene–May</span></p>
-<p class="p54"><span class="s2"><b>YoY por canal — Ene–May 2025 vs 2026</b><b></b></span></p>
-<p class="p55"><span class="s2">Variación porcentual acumulada en el mismo periodo</span></p>
-<p class="p54"><span class="s2"><b>Comparativo mensual total — 2025 completo vs 2026</b><b></b></span></p>
-<p class="p55"><span class="s2">2025 año completo · 2026 acumulado a la fecha · todos los canales</span></p>
-<table cellspacing="0" cellpadding="0" class="t1">
-  <tbody>
-    <tr>
-      <td valign="middle" class="td105">
-        <p class="p16"><span class="s2"><b>CANAL</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td106">
-        <p class="p22"><span class="s2"><b>ENE–MAY 2025</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td107">
-        <p class="p22"><span class="s2"><b>ENE–MAY 2026</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td108">
-        <p class="p22"><span class="s2"><b>DIFERENCIA</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td109">
-        <p class="p22"><span class="s2"><b>YOY %</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td110">
-        <p class="p22"><span class="s2"><b>TOTAL ANUAL 2025</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td111">
-        <p class="p22"><span class="s2"><b>TENDENCIA</b><b></b></span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td112">
-        <p class="p36"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Distribuidores</span></p>
-      </td>
-      <td valign="middle" class="td113">
-        <p class="p26"><span class="s2">239,472</span></p>
-      </td>
-      <td valign="middle" class="td114">
-        <p class="p25"><span class="s2"><b>242,056</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td115">
-        <p class="p26"><span class="s2">+2,584</span></p>
-      </td>
-      <td valign="middle" class="td116">
-        <p class="p27"><span class="s2"><b>▲ +1.1%</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td117">
-        <p class="p26"><span class="s2">562,969</span></p>
-      </td>
-      <td valign="middle" class="td118">
-        <p class="p40"><span class="s2">→ Estable</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td112">
-        <p class="p30"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Mercado Libre</span></p>
-      </td>
-      <td valign="middle" class="td113">
-        <p class="p26"><span class="s2">259,750</span></p>
-      </td>
-      <td valign="middle" class="td114">
-        <p class="p25"><span class="s2"><b>409,205</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td115">
-        <p class="p26"><span class="s2">+149,455</span></p>
-      </td>
-      <td valign="middle" class="td116">
-        <p class="p27"><span class="s2"><b>▲ +57.5%</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td117">
-        <p class="p26"><span class="s2">765,907</span></p>
-      </td>
-      <td valign="middle" class="td119">
-        <p class="p27"><span class="s2">↑ Creciendo</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td112">
-        <p class="p34"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">WEB</span></p>
-      </td>
-      <td valign="middle" class="td113">
-        <p class="p26"><span class="s2">256,628</span></p>
-      </td>
-      <td valign="middle" class="td114">
-        <p class="p25"><span class="s2"><b>231,538</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td120">
-        <p class="p31"><span class="s2">−25,090</span></p>
-      </td>
-      <td valign="middle" class="td121">
-        <p class="p31"><span class="s2"><b>▼ −9.8%</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td117">
-        <p class="p26"><span class="s2">702,015</span></p>
-      </td>
-      <td valign="middle" class="td122">
-        <p class="p31"><span class="s2">↓ A la baja</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td112">
-        <p class="p42"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">Amazon</span></p>
-      </td>
-      <td valign="middle" class="td113">
-        <p class="p26"><span class="s2">63,760</span></p>
-      </td>
-      <td valign="middle" class="td114">
-        <p class="p25"><span class="s2"><b>61,280</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td120">
-        <p class="p31"><span class="s2">−2,480</span></p>
-      </td>
-      <td valign="middle" class="td121">
-        <p class="p31"><span class="s2"><b>▼ −3.9%</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td117">
-        <p class="p26"><span class="s2">167,880</span></p>
-      </td>
-      <td valign="middle" class="td118">
-        <p class="p40"><span class="s2">→ Estable</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td112">
-        <p class="p23"><span class="s3"></span><br></p>
-        <p class="p24"><span class="s2">SHEIN</span></p>
-      </td>
-      <td valign="middle" class="td113">
-        <p class="p26"><span class="s2">77,340</span></p>
-      </td>
-      <td valign="middle" class="td114">
-        <p class="p25"><span class="s2"><b>387,220</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td115">
-        <p class="p26"><span class="s2">+309,880</span></p>
-      </td>
-      <td valign="middle" class="td116">
-        <p class="p27"><span class="s2"><b>▲ +400.7%</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td117">
-        <p class="p26"><span class="s2">969,640</span></p>
-      </td>
-      <td valign="middle" class="td119">
-        <p class="p27"><span class="s2">↑↑ Canal nuevo</span></p>
-      </td>
-    </tr>
-    <tr>
-      <td valign="middle" class="td123">
-        <p class="p49"><span class="s2"><b>TOTAL todos los canales</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td124">
-        <p class="p11"><span class="s2"><b>896,950</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td125">
-        <p class="p11"><span class="s2"><b>1,331,299</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td126">
-        <p class="p11"><span class="s2"><b>+434,349</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td127">
-        <p class="p11"><span class="s2"><b>▲ +48.4%</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td128">
-        <p class="p11"><span class="s2"><b>3,168,411</b><b></b></span></p>
-      </td>
-      <td valign="middle" class="td129">
-        <p class="p11"><span class="s2"><b>—</b><b></b></span></p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-<p class="p61"><span class="s3">UUPZ · Deviart S.A. de C.V.  |  Fuente: VENTAS EXTERNAS.xlsx · Hojas CONCENTRADO + ANALISIS  |  Generado: 8 de junio de 2026  |  Datos: Ene–May 2026 completos · Jun–Dic pendientes</span></p>
+<div class="page">
+
+<!-- ════════════════════════════════════════
+  1. HEADER
+════════════════════════════════════════ -->
+<div class="header">
+  <div>
+    <h1>🛒 UUPZ — Reporte Ingresos 2026</h1>
+    <p>Deviart S.A. de C.V. · Canal digital y distribución · Fuente: VENTAS EXTERNAS.xlsx · Hojas CONCENTRADO + ANALISIS</p>
+    <div class="pills" style="margin-top:10px;">
+      <span class="pill" style="color:#92400e;border-color:#fcd9b0;background:#fef3e2"><span class="dot" style="background:#92400e"></span>Distribuidores</span>
+      <span class="pill" style="color:#be185d;border-color:#fbcfe8;background:#fdf2f8"><span class="dot" style="background:#ec4899"></span>Padcolor</span>
+      <span class="pill" style="color:#1d4ed8;border-color:#bfdbfe;background:#eff6ff"><span class="dot" style="background:#3b7ef0"></span>Impresión</span>
+      <span class="pill" style="color:#15803d;border-color:#bbf7d0;background:#f0fdf4"><span class="dot" style="background:#16a34a"></span>Starbucks</span>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="date-badge">
+      <strong>Ene – May 2026</strong>
+      5 meses completos · Jun–Dic pendientes
+    </div>
+    <a class="nav-btn" href="https://jackyfuentes-emakers.github.io/reportes-uupz/global_2026_ejecutivo.html?sem1jun" target="_blank">
+      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      Ver Reporte Plataformas
+    </a>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+  2. KPIs PRINCIPALES — PRIMERA LÍNEA
+════════════════════════════════════════ -->
+<div class="sec-label">Indicadores principales</div>
+<div class="kpi5">
+  <div class="kpi" style="border-top-color:#111;">
+    <div class="kpi-label">Ingresos totales Ene–May</div>
+    <div class="kpi-value lg" style="color:#111">$19.47M</div>
+    <div class="kpi-sub">MXN sin IVA · Sin imp + Impresos</div>
+    <div class="kpi-delta green">Sin imp $15.96M · Imp $3.50M</div>
+  </div>
+  <div class="kpi" style="border-top-color:#92400e;">
+    <div class="kpi-label">Piezas vendidas Ene–May</div>
+    <div class="kpi-value lg">1,543,144</div>
+    <div class="kpi-sub">Sin imp 1,331,299 · Imp 211,845</div>
+    <div class="kpi-delta green">Promedio ~257K pzas / mes</div>
+  </div>
+  <div class="kpi" style="border-top-color:#7c3aed;">
+    <div class="kpi-label">Precio promedio / pieza</div>
+    <div class="kpi-value lg" style="color:#7c3aed">$12.62</div>
+    <div class="kpi-sub">Impresos $16.59 · Sin imp $11.99</div>
+    <div class="kpi-delta amber">WEB $15.50 · ML $9.32 ↓</div>
+  </div>
+  <div class="kpi" style="border-top-color:#1a1a1a;">
+    <div class="kpi-label">Canal líder en ingresos</div>
+    <div class="kpi-value md" style="font-weight:800">SHEIN</div>
+    <div class="kpi-sub">$4.91M · 25.2% del total</div>
+    <div class="kpi-delta green">↑ 387K pzas · $12.68/pza</div>
+  </div>
+  <div class="kpi" style="border-top-color:#f97316;">
+    <div class="kpi-label">Mejor mes (ingresos totales)</div>
+    <div class="kpi-value md" style="font-weight:800">Febrero</div>
+    <div class="kpi-sub">$4.35M · 321K pzas</div>
+    <div class="kpi-delta gray">Starbucks +105K pzas ese mes</div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+  3. SCORECARD POR CANAL — COCKPIT VIEW
+════════════════════════════════════════ -->
+<div class="sec-label">Scorecard por canal · Ene–May 2026</div>
+<div class="scorecard">
+  <table>
+    <thead>
+      <tr>
+        <th style="width:160px">Canal</th>
+        <th>Piezas</th>
+        <th>% Vol.</th>
+        <th>Ingresos MXN</th>
+        <th>% Revenue</th>
+        <th>$/Pza</th>
+        <th>Participación</th>
+        <th>vs May Ant.</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- SHEIN -->
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#1a1a1a"></span>SHEIN</div></td>
+        <td class="bold">387,220</td><td>26.0%</td>
+        <td class="bold">$4,911,929</td><td class="bold hi">26.4%</td>
+        <td>$12.68</td>
+        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:100%;background:#1a1a1a"></div></div></td>
+        <td class="hi">+10% ↑</td>
+        <td><span class="tag tag-green">🟢 Creciendo</span></td>
+      </tr>
+      <!-- ML -->
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#f5c800"></span>Mercado Libre</div></td>
+        <td class="bold">409,205</td><td>27.5%</td>
+        <td class="bold">$3,814,590</td><td>20.5%</td>
+        <td class="lo">$9.32</td>
+        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:78%;background:#f5c800"></div></div></td>
+        <td class="hi">+14% ↑</td>
+        <td><span class="tag tag-amber">🟡 Precio bajo</span></td>
+      </tr>
+      <!-- WEB -->
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#ef4444"></span>WEB</div></td>
+        <td class="bold">231,538</td><td>15.0%</td>
+        <td class="bold">$3,587,784</td><td>18.4%</td>
+        <td class="hi">$15.50</td>
+        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:70%;background:#ef4444"></div></div></td>
+        <td class="hi">+22% ↑</td>
+        <td><span class="tag tag-green">🟢 Normal</span></td>
+      </tr>
+      <!-- Distribuidores -->
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#92400e"></span>Distribuidores</div></td>
+        <td class="bold">193,576</td><td>13.0%</td>
+        <td class="bold">$2,431,509</td><td>13.1%</td>
+        <td>$12.56</td>
+        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:50%;background:#92400e"></div></div></td>
+        <td class="hi">+8% ↑</td>
+        <td><span class="tag tag-green">🟢 Estable</span></td>
+      </tr>
+      <!-- Starbucks -->
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#16a34a"></span>Starbucks</div></td>
+        <td class="bold">142,414</td><td>9.6%</td>
+        <td class="bold">$2,210,414</td><td>11.9%</td>
+        <td>$15.52</td>
+        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:45%;background:#16a34a"></div></div></td>
+        <td class="gray">Esporádico</td>
+        <td><span class="tag tag-gray">⚪ Pedidos clave</span></td>
+      </tr>
+      <!-- Amazon -->
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#7c3aed"></span>Amazon</div></td>
+        <td class="bold">61,280</td><td>4.1%</td>
+        <td class="bold">$825,996</td><td>4.4%</td>
+        <td>$13.48</td>
+        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:17%;background:#7c3aed"></div></div></td>
+        <td class="lo">−29% ↓</td>
+        <td><span class="tag tag-amber">🟡 Estable</span></td>
+      </tr>
+      <!-- Impresión -->
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#3b7ef0"></span>Impresión</div></td>
+        <td class="bold">69,431</td><td>4.7%</td>
+        <td class="bold">$1,292,568</td><td>7.0%</td>
+        <td class="hi">$18.67 ↑</td>
+        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:27%;background:#3b7ef0"></div></div></td>
+        <td class="hi">+60% ↑</td>
+        <td><span class="tag tag-green">🟢 Mayor margen</span></td>
+      </tr>
+      <!-- Padcolor -->
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#ec4899"></span>Padcolor</div></td>
+        <td class="bold">48,480</td><td>3.3%</td>
+        <td class="bold">$392,910</td><td class="lo">2.1%</td>
+        <td class="lo">$8.09 ↓</td>
+        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:8%;background:#ec4899"></div></div></td>
+        <td class="lo">−67% ↓</td>
+        <td><span class="tag tag-red">🔴 A la baja</span></td>
+      </tr>
+      <!-- TOTAL -->
+      <tr class="tt">
+        <td>GRAN TOTAL</td>
+        <td>1,543,144</td><td>100%</td>
+        <td>$19,467,700</td><td>100%</td>
+        <td>$12.62</td>
+        <td></td><td></td><td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ════════════════════════════════════════
+  4. TABLA — VASOS + INGRESOS POR MES
+════════════════════════════════════════ -->
+<div class="sec-label">Detalle mensual · Piezas e ingresos por canal</div>
+<div class="tbl-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Canal</th>
+        <th>Ene</th><th>Feb</th><th>Mar</th><th>Abr</th><th>May</th>
+        <th>Total pzas</th><th>$/Pza</th><th>Ingresos MXN</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="gh"><td colspan="9">Sin Impresión · Distribución física</td></tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#92400e"></span>Distribuidores</div></td>
+        <td>44,089</td><td>24,915</td><td>41,802</td><td>23,816</td><td class="hi">58,954</td>
+        <td class="bold">193,576</td><td>$12.56</td><td class="bold">$2,431,509</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#ec4899"></span>Padcolor</div></td>
+        <td class="hi">14,470</td><td>8,510</td><td>11,500</td><td>9,280</td><td class="lo">4,720</td>
+        <td class="bold">48,480</td><td class="lo">$8.09</td><td class="bold">$392,910</td>
+      </tr>
+      <tr class="st">
+        <td>Subtotal Distribución</td>
+        <td>58,559</td><td>33,425</td><td>53,302</td><td>33,096</td><td>63,674</td>
+        <td>242,056</td><td>$11.55</td><td>$2,824,419</td>
+      </tr>
+      <tr class="gh"><td colspan="9">Sin Impresión · Plataformas digitales</td></tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#1a1a1a"></span>SHEIN</div></td>
+        <td>88,010</td><td>62,450</td><td>68,740</td><td>71,060</td><td class="hi">96,960</td>
+        <td class="bold">387,220</td><td>$12.68</td><td class="bold">$4,911,929</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#f5c800"></span>Mercado Libre</div></td>
+        <td>78,317</td><td>69,467</td><td>76,620</td><td>89,470</td><td class="hi">95,331</td>
+        <td class="bold">409,205</td><td class="lo">$9.32</td><td class="bold">$3,814,590</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#7c3aed"></span>Amazon</div></td>
+        <td class="hi">13,700</td><td>11,230</td><td>12,500</td><td>11,700</td><td class="lo">12,150</td>
+        <td class="bold">61,280</td><td>$13.48</td><td class="bold">$825,996</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#ef4444"></span>WEB</div></td>
+        <td class="hi">55,594</td><td>32,422</td><td>42,914</td><td>45,295</td><td class="hi">55,313</td>
+        <td class="bold">231,538</td><td class="hi">$15.50</td><td class="bold">$3,587,784</td>
+      </tr>
+      <tr class="st">
+        <td>Subtotal Plataformas</td>
+        <td>235,621</td><td>175,569</td><td>200,774</td><td>217,525</td><td>259,754</td>
+        <td>1,089,243</td><td>$12.06</td><td>$13,140,299</td>
+      </tr>
+      <tr class="gh"><td colspan="9">Impresos</td></tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#3b7ef0"></span>Impresión</div></td>
+        <td class="hi">25,300</td><td>7,080</td><td>10,051</td><td>21,000</td><td class="lo">6,000</td>
+        <td class="bold">69,431</td><td class="hi">$18.67</td><td class="bold">$1,292,568</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#16a34a"></span>Starbucks</div></td>
+        <td class="zero">—</td><td class="hi">105,109</td><td>3,795</td><td>25,920</td><td>7,590</td>
+        <td class="bold">142,414</td><td>$15.52</td><td class="bold">$2,210,414</td>
+      </tr>
+      <tr class="st">
+        <td>Subtotal Impresos</td>
+        <td>25,300</td><td>112,189</td><td>13,846</td><td>46,920</td><td>13,590</td>
+        <td>211,845</td><td class="hi">$16.59</td><td>$3,502,982</td>
+      </tr>
+      <tr class="tt">
+        <td>GRAN TOTAL</td>
+        <td>319,480</td><td>321,183</td><td>267,922</td><td>297,541</td><td>323,428</td>
+        <td>1,543,144</td><td>$12.62</td><td>$19,467,700</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Tabla ingresos MXN -->
+<div style="margin-top:12px;" class="tbl-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Canal · Ingresos MXN sin IVA</th>
+        <th>Enero</th><th>Febrero</th><th>Marzo</th><th>Abril</th><th>Mayo</th>
+        <th>Total</th><th>% del Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="gh"><td colspan="8">Sin Impresión</td></tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#1a1a1a"></span>SHEIN</div></td>
+        <td>$1,108,026</td><td>$789,831</td><td>$876,787</td><td>$902,514</td><td class="hi">$1,234,771</td>
+        <td class="bold">$4,911,929</td><td class="hi bold">26.4%</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#f5c800"></span>Mercado Libre</div></td>
+        <td>$727,541</td><td>$648,446</td><td>$726,123</td><td class="hi">$855,563</td><td>$856,917</td>
+        <td class="bold">$3,814,590</td><td>20.5%</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#ef4444"></span>WEB</div></td>
+        <td class="hi">$771,857</td><td>$451,535</td><td>$756,128</td><td>$722,903</td><td class="hi">$885,361</td>
+        <td class="bold">$3,587,784</td><td>18.4%</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#92400e"></span>Distribuidores</div></td>
+        <td>$548,816</td><td>$319,286</td><td>$514,942</td><td>$312,864</td><td class="hi">$735,601</td>
+        <td class="bold">$2,431,509</td><td>13.1%</td>
+      </tr>
+      <tr class="gh"><td colspan="8">Impresos</td></tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#16a34a"></span>Starbucks</div></td>
+        <td class="zero">—</td><td class="hi">$1,771,409</td><td>$49,335</td><td>$291,000</td><td>$98,670</td>
+        <td class="bold">$2,210,414</td><td>11.9%</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#3b7ef0"></span>Impresión</div></td>
+        <td class="hi">$469,361</td><td>$142,361</td><td>$178,073</td><td>$386,714</td><td>$116,059</td>
+        <td class="bold">$1,292,568</td><td>7.0%</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#7c3aed"></span>Amazon</div></td>
+        <td class="hi">$206,777</td><td>$155,742</td><td>$152,684</td><td>$158,594</td><td>$152,199</td>
+        <td class="bold">$825,996</td><td>4.4%</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#ec4899"></span>Padcolor</div></td>
+        <td>$123,106</td><td>$71,123</td><td>$89,579</td><td>$71,197</td><td class="lo">$37,905</td>
+        <td class="bold">$392,910</td><td class="lo">2.1%</td>
+      </tr>
+      <tr class="tt">
+        <td>GRAN TOTAL</td>
+        <td>$3,955,484</td><td>$4,349,733</td><td>$3,343,651</td><td>$3,701,349</td><td class="hi">$4,117,483</td>
+        <td>$19,467,700</td><td>100%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ════════════════════════════════════════
+  5. GRÁFICAS
+════════════════════════════════════════ -->
+<div class="sec-label">Evolución mensual e ingresos</div>
+<div class="g21" style="margin-bottom:14px;">
+  <div class="chart-box">
+    <div class="cb-title">Ingresos por canal y mes (MXN sin IVA)</div>
+    <div class="cb-sub">Barras apiladas · todos los canales</div>
+    <canvas id="cBar" height="200"></canvas>
+  </div>
+  <div class="chart-box">
+    <div class="cb-title">Total mensual + $/pieza</div>
+    <div class="cb-sub">Barra = ingresos · Línea naranja = precio prom.</div>
+    <canvas id="cTotal" height="200"></canvas>
+  </div>
+</div>
+<div class="g2">
+  <div class="chart-box">
+    <div class="cb-title">Volumen de piezas por canal</div>
+    <div class="cb-sub">Total acumulado Ene–May · barras horizontales</div>
+    <canvas id="cVol" height="200"></canvas>
+  </div>
+  <div class="chart-box">
+    <div class="cb-title">Precio promedio por canal ($/pza)</div>
+    <div class="cb-sub">Mayor precio = mejor margen por unidad</div>
+    <canvas id="cPrec" height="200"></canvas>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+  6. ANÁLISIS EJECUTIVO
+════════════════════════════════════════ -->
+<div class="sec-label">Análisis ejecutivo · Puntos de acción</div>
+<div class="ins-grid">
+  <div class="ins" style="border-color:#92400e;background:#fef3e2">
+    <div class="ins-title">✅ SHEIN — Canal líder en revenue</div>
+    <div class="ins-body">Con <strong>$4.91M (26.4%)</strong> del total y crecimiento sostenido mes a mes (+10% May vs Ene). Priorizar inventario y publicaciones activas.</div>
+  </div>
+  <div class="ins" style="border-color:#ef4444;background:#fef2f2">
+    <div class="ins-title">🔴 WEB — Canal a recuperar YoY</div>
+    <div class="ins-body">Mayo recuperado: <strong>55,313 pzas · $885K</strong>. Sin embargo el acumulado Ene–May 2026 (231K pzas) sigue <strong>−9.8% vs 2025</strong> (256K pzas). Precio alto ($15.50/pza) lo hace estratégico: priorizar crecimiento de volumen.</div>
+  </div>
+  <div class="ins" style="border-color:#f5c800;background:#fefce8">
+    <div class="ins-title">🟡 ML — Mayor volumen, menor precio</div>
+    <div class="ins-body">Lidera en piezas (409K) pero precio más bajo de plataformas (<strong>$9.32/pza</strong> vs $15.33 WEB). Oportunidad: bundles y modelos premium.</div>
+  </div>
+  <div class="ins" style="border-color:#3b7ef0;background:#eff6ff">
+    <div class="ins-title">🔵 Impresos — Palanca de margen</div>
+    <div class="ins-body">Precio más alto del portafolio (<strong>$18.67/pza</strong>), <strong>+58% sobre el promedio</strong>. Cada pieza impresa adicional mejora el margen sin aumentar volumen de producción base.</div>
+  </div>
+  <div class="ins" style="border-color:#16a34a;background:#f0fdf4">
+    <div class="ins-title">🟢 Starbucks — Pedido pico en Febrero</div>
+    <div class="ins-body">Feb pico por <strong>105K pzas Starbucks</strong> a $16.85/pza. Pedidos esporádicos — no modelar flujo mensual sobre este evento. Mantener relación comercial.</div>
+  </div>
+  <div class="ins" style="border-color:#ec4899;background:#fdf2f8">
+    <div class="ins-title">🩷 Padcolor — Revisar rentabilidad</div>
+    <div class="ins-body">Precio más bajo (<strong>$8.09/pza</strong>) y volumen cayendo −67% de Ene a May. Si tiene costos de serigrafía adicionales, el margen real puede ser negativo.</div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+  7. ANÁLISIS GENERAL YoY — HOJA ANALISIS
+════════════════════════════════════════ -->
+<div class="sec-label">Análisis general · Comparativo 2025 vs 2026 · Hoja ANALISIS</div>
+
+<!-- KPIs YoY -->
+<div class="kpi5" style="margin-bottom:14px;">
+  <div class="kpi" style="border-top-color:#374151">
+    <div class="kpi-label">Total YTD 2026 (Ene–May)</div>
+    <div class="kpi-value">1,331,299</div>
+    <div class="kpi-sub">vs 896,950 mismo periodo 2025</div>
+  </div>
+  <div class="kpi" style="border-top-color:#16a34a">
+    <div class="kpi-label">YoY Ene–May 2025 vs 2026</div>
+    <div class="kpi-value green">▲ +48.4%</div>
+    <div class="kpi-sub">+434,349 vasos adicionales YTD</div>
+  </div>
+  <div class="kpi" style="border-top-color:#1a1a1a">
+    <div class="kpi-label">Canal con mayor crecimiento %</div>
+    <div class="kpi-value md" style="font-weight:800">SHEIN</div>
+    <div class="kpi-sub">77,340 → 387,220 · <strong>+401%</strong></div>
+  </div>
+  <div class="kpi" style="border-top-color:#f5c800">
+    <div class="kpi-label">Canal en mayor crecimiento vol.</div>
+    <div class="kpi-value md amber" style="font-weight:800">ML</div>
+    <div class="kpi-sub">259,750 → 409,205 · <strong>+57.5%</strong></div>
+  </div>
+  <div class="kpi" style="border-top-color:#ef4444">
+    <div class="kpi-label">Canal a la baja</div>
+    <div class="kpi-value md red" style="font-weight:800">WEB</div>
+    <div class="kpi-sub">256,628 → 231,538 · <strong>−9.8%</strong></div>
+  </div>
+</div>
+
+<!-- Gráficas YoY -->
+<div class="g2" style="margin-bottom:14px;">
+  <div class="chart-box">
+    <div class="cb-title">Tendencia histórica por canal — 2021 a 2026</div>
+    <div class="cb-sub">Vasos anuales por canal · *2026 parcial Ene–May</div>
+    <canvas id="cHist" height="220"></canvas>
+  </div>
+  <div class="chart-box">
+    <div class="cb-title">YoY por canal — Ene–May 2025 vs 2026</div>
+    <div class="cb-sub">Variación porcentual acumulada en el mismo periodo</div>
+    <canvas id="cYoY" height="220"></canvas>
+  </div>
+</div>
+
+<!-- Comparativo mensual 2025 vs 2026 -->
+<div class="chart-box">
+  <div class="cb-title">Comparativo mensual total — 2025 completo vs 2026</div>
+  <div class="cb-sub">2025 año completo · 2026 acumulado a la fecha · todos los canales</div>
+  <canvas id="cComp" height="160"></canvas>
+</div>
+
+<!-- Tabla resumen YoY -->
+<div style="margin-top:14px;" class="tbl-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Canal</th>
+        <th>Ene–May 2025</th><th>Ene–May 2026</th>
+        <th>Diferencia</th><th>YoY %</th>
+        <th>Total Anual 2025</th><th>Tendencia</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#92400e"></span>Distribuidores</div></td>
+        <td>239,472</td><td class="bold">242,056</td>
+        <td>+2,584</td><td class="green" style="font-weight:700">▲ +1.1%</td>
+        <td>562,969</td><td class="gray" style="font-weight:600">→ Estable</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#f5c800"></span>Mercado Libre</div></td>
+        <td>259,750</td><td class="bold">409,205</td>
+        <td>+149,455</td><td class="green" style="font-weight:700">▲ +57.5%</td>
+        <td>765,907</td><td class="green" style="font-weight:600">↑ Creciendo</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#ef4444"></span>WEB</div></td>
+        <td>256,628</td><td class="bold">231,538</td>
+        <td class="lo">−25,090</td><td class="red" style="font-weight:700">▼ −9.8%</td>
+        <td>702,015</td><td class="red" style="font-weight:600">↓ A la baja</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#7c3aed"></span>Amazon</div></td>
+        <td>63,760</td><td class="bold">61,280</td>
+        <td class="lo">−2,480</td><td class="red" style="font-weight:700">▼ −3.9%</td>
+        <td>167,880</td><td class="gray" style="font-weight:600">→ Estable</td>
+      </tr>
+      <tr>
+        <td><div class="cn"><span class="cdot" style="background:#1a1a1a"></span>SHEIN</div></td>
+        <td>77,340</td><td class="bold">387,220</td>
+        <td>+309,880</td><td class="green" style="font-weight:700">▲ +400.7%</td>
+        <td>969,640</td><td class="green" style="font-weight:600">↑↑ Canal nuevo</td>
+      </tr>
+      <tr class="tt">
+        <td>TOTAL todos los canales</td>
+        <td>896,950</td><td>1,331,299</td>
+        <td>+434,349</td><td class="green" style="font-weight:700">▲ +48.4%</td>
+        <td>3,168,411</td><td>—</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<div class="footer" style="margin-top:32px;">
+  UUPZ · Deviart S.A. de C.V. &nbsp;|&nbsp; Fuente: VENTAS EXTERNAS.xlsx · Hojas CONCENTRADO + ANALISIS &nbsp;|&nbsp; Generado: 8 de junio de 2026 &nbsp;|&nbsp; Datos: Ene–May 2026 completos · Jun–Dic pendientes
+</div>
+
+</div><!-- /page -->
+
+<script>
+Chart.defaults.font.family = "-apple-system,'Segoe UI',sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = '#9ca3af';
+const grid = '#f3f4f6';
+const M5 = ['Ene','Feb','Mar','Abr','May'];
+const C = { dist:'#92400e', pad:'#ec4899', shein:'#1a1a1a', ml:'#f5c800', amz:'#7c3aed', web:'#ef4444', imp:'#3b7ef0', sb:'#16a34a' };
+
+// 1. Barras apiladas ingresos
+new Chart(document.getElementById('cBar'), {
+  type:'bar',
+  data:{ labels:M5, datasets:[
+    {label:'Distribuidores',data:[548816,319286,514942,312864,735601],backgroundColor:C.dist+'cc',stack:'s'},
+    {label:'Padcolor',      data:[123106,71123,89579,71197,37905],   backgroundColor:C.pad+'cc', stack:'s'},
+    {label:'SHEIN',         data:[1108026,789831,876787,902514,1234771],backgroundColor:C.shein+'cc',stack:'s'},
+    {label:'Mercado Libre', data:[727541,648446,726123,855563,856917],backgroundColor:C.ml+'cc', stack:'s'},
+    {label:'Amazon',        data:[206777,155742,152684,158594,152199],backgroundColor:C.amz+'cc',stack:'s'},
+    {label:'WEB',           data:[771857,451535,756128,722903,885361],backgroundColor:C.web+'cc', stack:'s'},
+    {label:'Impresión',     data:[469361,142361,178073,386714,116059],backgroundColor:C.imp+'cc',stack:'s'},
+    {label:'Starbucks',     data:[0,1771409,49335,291000,98670],     backgroundColor:C.sb+'cc',  stack:'s'},
+  ]},
+  options:{responsive:true,maintainAspectRatio:true,
+    plugins:{legend:{position:'bottom',labels:{usePointStyle:true,padding:8,font:{size:10}}}},
+    scales:{x:{stacked:true,grid:{color:grid}},y:{stacked:true,grid:{color:grid},ticks:{callback:v=>'$'+(v/1e6).toFixed(1)+'M'}}}}
+});
+
+// 2. Total + precio línea
+const mxn5=[3955484,4349733,3343651,3701349,4117483];
+const pzs5=[319480,321183,267922,297541,323428];
+const pre5=mxn5.map((m,i)=>pzs5[i]>0?+(m/pzs5[i]).toFixed(2):0);
+new Chart(document.getElementById('cTotal'),{type:'bar',data:{labels:M5,datasets:[
+  {label:'Ingresos MXN',data:mxn5,backgroundColor:'rgba(59,126,240,0.15)',borderColor:'#3b7ef0',borderWidth:1.5,borderRadius:4,yAxisID:'y'},
+  {label:'$/Pza',type:'line',data:pre5,borderColor:'#f97316',backgroundColor:'transparent',pointBackgroundColor:'#f97316',borderWidth:2,pointRadius:4,tension:0.3,yAxisID:'y2'}
+]},
+options:{responsive:true,maintainAspectRatio:true,
+  plugins:{legend:{position:'bottom',labels:{usePointStyle:true,padding:10,font:{size:10}}}},
+  scales:{x:{grid:{color:grid}},
+    y:{grid:{color:grid},ticks:{callback:v=>'$'+(v/1e6).toFixed(1)+'M'},title:{display:true,text:'Ingresos',color:'#3b7ef0',font:{size:9}}},
+    y2:{position:'right',grid:{drawOnChartArea:false},ticks:{callback:v=>'$'+v.toFixed(0)},title:{display:true,text:'$/pza',color:'#f97316',font:{size:9}}}}}
+});
+
+// 3. Volumen horizontal
+new Chart(document.getElementById('cVol'),{type:'bar',data:{
+  labels:['Mercado Libre','SHEIN','WEB','Distribuidores','Starbucks','Impresión','Amazon','Padcolor'],
+  datasets:[{data:[409205,387220,231538,193576,142414,69431,61280,48480],
+    backgroundColor:[C.ml,C.shein,C.web,C.dist,C.sb,C.imp,C.amz,C.pad].map(c=>c+'cc'),borderRadius:4}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:true,
+    plugins:{legend:{display:false}},
+    scales:{x:{grid:{color:grid},ticks:{callback:v=>(v/1000).toFixed(0)+'k'}},y:{grid:{color:grid}}}}
+});
+
+// 4. Precio horizontal
+new Chart(document.getElementById('cPrec'),{type:'bar',data:{
+  labels:['Impresión','Starbucks','WEB','Amazon','Dist.','SHEIN','ML','Padcolor'],
+  datasets:[{data:[18.67,15.52,15.50,13.48,12.56,12.68,9.32,8.09],
+    backgroundColor:[C.imp,C.sb,C.web,C.amz,C.dist,C.shein,C.ml,C.pad].map(c=>c+'cc'),borderRadius:4}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:true,
+    plugins:{legend:{display:false}},
+    scales:{x:{grid:{color:grid},ticks:{callback:v=>'$'+v},min:0,max:22},y:{grid:{color:grid}}}}
+});
+
+// 5. Histórico 2021-2026
+new Chart(document.getElementById('cHist'),{type:'bar',data:{
+  labels:['2021','2022','2023','2024','2025','2026*'],
+  datasets:[
+    {label:'Distribuidores',data:[931602,1342700,1081598,812515,562969,242056],backgroundColor:C.dist+'cc',stack:'s'},
+    {label:'Mercado Libre', data:[790361,1095145,1419729,863241,765907,409205],backgroundColor:C.ml+'cc', stack:'s'},
+    {label:'WEB',           data:[549623,931009,786157,689319,702015,231538],  backgroundColor:C.web+'cc',stack:'s'},
+    {label:'Amazon',        data:[17324,80347,104926,121880,167880,61280],     backgroundColor:C.amz+'cc',stack:'s'},
+    {label:'SHEIN',         data:[0,0,0,0,969640,387220],                      backgroundColor:C.shein+'cc',stack:'s'},
+  ]},
+  options:{responsive:true,maintainAspectRatio:true,
+    plugins:{legend:{position:'bottom',labels:{usePointStyle:true,padding:8,font:{size:10}}}},
+    scales:{x:{stacked:true,grid:{color:grid}},y:{stacked:true,grid:{color:grid},ticks:{callback:v=>(v/1e6).toFixed(1)+'M'}}}}
+});
+
+// 6. YoY horizontal
+new Chart(document.getElementById('cYoY'),{type:'bar',data:{
+  labels:['SHEIN','Mercado Libre','Distribuidores','Amazon','WEB'],
+  datasets:[{data:[400.7,57.5,1.1,-3.9,-9.8],
+    backgroundColor:[C.shein,C.ml,C.dist,C.amz,C.web].map(c=>c+'cc'),borderRadius:4}]},
+  options:{indexAxis:'y',responsive:true,maintainAspectRatio:true,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:ctx=>(ctx.raw>0?'+':'')+ctx.raw+'%'}}},
+    scales:{x:{grid:{color:grid},ticks:{callback:v=>(v>0?'+':'')+v+'%'}},y:{grid:{color:grid}}}}
+});
+
+// 7. Comparativo mensual 2025 vs 2026
+new Chart(document.getElementById('cComp'),{type:'line',data:{
+  labels:['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+  datasets:[
+    {label:'Total 2025',data:[152708,117952,150558,189812,285920,389480,327158,277840,303382,332596,351914,289091],
+     borderColor:'#94a3b8',borderWidth:2,borderDash:[6,4],backgroundColor:'transparent',
+     pointBackgroundColor:'#94a3b8',pointRadius:4,tension:0.3},
+    {label:'Total 2026',data:[294180,208994,254076,250621,323428,null,null,null,null,null,null,null],
+     borderColor:'#3b7ef0',borderWidth:2.5,backgroundColor:'rgba(59,126,240,0.07)',fill:true,
+     pointBackgroundColor:'#3b7ef0',pointRadius:5,tension:0.3,spanGaps:false}
+  ]},
+  options:{responsive:true,maintainAspectRatio:true,
+    plugins:{legend:{position:'top',align:'end',labels:{usePointStyle:true,padding:16,font:{size:11}}}},
+    scales:{x:{grid:{color:grid}},y:{grid:{color:grid},ticks:{callback:v=>(v/1000).toFixed(0)+'k'},min:100000}}}
+});
+</script>
 </body>
 </html>
