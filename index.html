@@ -24,6 +24,16 @@ body { background: #f5f6fa; color: #111; font-family: -apple-system,'Segoe UI',s
 .header-right { text-align:right; }
 .date-badge { background:#f9fafb; border:1px solid #e5e7eb; border-radius:8px; padding:6px 14px; font-size:11px; color:#374151; }
 .date-badge strong { display:block; font-size:13px; color:#111; }
+.nav-btn {
+  display:inline-flex; align-items:center; gap:6px;
+  background:#111; color:#fff; border-radius:8px;
+  padding:8px 16px; font-size:11px; font-weight:700;
+  text-decoration:none; letter-spacing:.3px;
+  border:none; cursor:pointer; margin-top:8px;
+  transition:background .15s;
+}
+.nav-btn:hover { background:#374151; }
+.nav-btn svg { flex-shrink:0; }
 
 /* ─── SECTION LABEL ─── */
 .sec-label {
@@ -133,12 +143,8 @@ hr { border:none; border-top:1px solid #e5e7eb; margin:24px 0; }
     <h1>🛒 UUPZ — Reporte Ingresos 2026</h1>
     <p>Deviart S.A. de C.V. · Canal digital y distribución · Fuente: VENTAS EXTERNAS.xlsx · Hojas CONCENTRADO + ANALISIS</p>
     <div class="pills" style="margin-top:10px;">
-      <span class="pill" style="color:#16a34a;border-color:#bbf7d0;background:#f0fdf4"><span class="dot" style="background:#22c55e"></span>Distribuidores</span>
+      <span class="pill" style="color:#92400e;border-color:#fcd9b0;background:#fef3e2"><span class="dot" style="background:#92400e"></span>Distribuidores</span>
       <span class="pill" style="color:#be185d;border-color:#fbcfe8;background:#fdf2f8"><span class="dot" style="background:#ec4899"></span>Padcolor</span>
-      <span class="pill" style="color:#111;border-color:#d1d5db;background:#f9fafb"><span class="dot" style="background:#1a1a1a"></span>SHEIN</span>
-      <span class="pill" style="color:#a16207;border-color:#fde68a;background:#fefce8"><span class="dot" style="background:#f5c800"></span>Mercado Libre</span>
-      <span class="pill" style="color:#6d28d9;border-color:#ddd6fe;background:#f5f3ff"><span class="dot" style="background:#7c3aed"></span>Amazon</span>
-      <span class="pill" style="color:#dc2626;border-color:#fecaca;background:#fef2f2"><span class="dot" style="background:#ef4444"></span>WEB</span>
       <span class="pill" style="color:#1d4ed8;border-color:#bfdbfe;background:#eff6ff"><span class="dot" style="background:#3b7ef0"></span>Impresión</span>
       <span class="pill" style="color:#15803d;border-color:#bbf7d0;background:#f0fdf4"><span class="dot" style="background:#16a34a"></span>Starbucks</span>
     </div>
@@ -148,6 +154,10 @@ hr { border:none; border-top:1px solid #e5e7eb; margin:24px 0; }
       <strong>Ene – May 2026</strong>
       5 meses completos · Jun–Dic pendientes
     </div>
+    <a class="nav-btn" href="https://jackyfuentes-emakers.github.io/reportes-uupz/global_2026_ejecutivo.html?sem1jun" target="_blank">
+      <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+      Ver Reporte Plataformas
+    </a>
   </div>
 </div>
 
@@ -163,7 +173,7 @@ hr { border:none; border-top:1px solid #e5e7eb; margin:24px 0; }
     <div class="kpi-sub">MXN sin IVA · Sin imp + Impresos</div>
     <div class="kpi-delta green">Sin imp $15.96M · Imp $3.50M</div>
   </div>
-  <div class="kpi" style="border-top-color:#22c55e;">
+  <div class="kpi" style="border-top-color:#92400e;">
     <div class="kpi-label">Piezas vendidas Ene–May</div>
     <div class="kpi-value lg">1,543,144</div>
     <div class="kpi-sub">Sin imp 1,331,299 · Imp 211,845</div>
@@ -242,11 +252,11 @@ hr { border:none; border-top:1px solid #e5e7eb; margin:24px 0; }
       </tr>
       <!-- Distribuidores -->
       <tr>
-        <td><div class="cn"><span class="cdot" style="background:#22c55e"></span>Distribuidores</div></td>
+        <td><div class="cn"><span class="cdot" style="background:#92400e"></span>Distribuidores</div></td>
         <td class="bold">193,576</td><td>13.0%</td>
         <td class="bold">$2,431,509</td><td>13.1%</td>
         <td>$12.56</td>
-        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:50%;background:#22c55e"></div></div></td>
+        <td><div class="mini-bar-bg"><div class="mini-bar-fill" style="width:50%;background:#92400e"></div></div></td>
         <td class="hi">+8% ↑</td>
         <td><span class="tag tag-green">🟢 Estable</span></td>
       </tr>
@@ -319,7 +329,7 @@ hr { border:none; border-top:1px solid #e5e7eb; margin:24px 0; }
     <tbody>
       <tr class="gh"><td colspan="9">Sin Impresión · Distribución física</td></tr>
       <tr>
-        <td><div class="cn"><span class="cdot" style="background:#22c55e"></span>Distribuidores</div></td>
+        <td><div class="cn"><span class="cdot" style="background:#92400e"></span>Distribuidores</div></td>
         <td>44,089</td><td>24,915</td><td>41,802</td><td>23,816</td><td class="hi">58,954</td>
         <td class="bold">193,576</td><td>$12.56</td><td class="bold">$2,431,509</td>
       </tr>
@@ -412,7 +422,7 @@ hr { border:none; border-top:1px solid #e5e7eb; margin:24px 0; }
         <td class="bold">$3,587,784</td><td>18.4%</td>
       </tr>
       <tr>
-        <td><div class="cn"><span class="cdot" style="background:#22c55e"></span>Distribuidores</div></td>
+        <td><div class="cn"><span class="cdot" style="background:#92400e"></span>Distribuidores</div></td>
         <td>$548,816</td><td>$319,286</td><td>$514,942</td><td>$312,864</td><td class="hi">$735,601</td>
         <td class="bold">$2,431,509</td><td>13.1%</td>
       </tr>
@@ -482,7 +492,7 @@ hr { border:none; border-top:1px solid #e5e7eb; margin:24px 0; }
 ════════════════════════════════════════ -->
 <div class="sec-label">Análisis ejecutivo · Puntos de acción</div>
 <div class="ins-grid">
-  <div class="ins" style="border-color:#22c55e;background:#f0fdf4">
+  <div class="ins" style="border-color:#92400e;background:#fef3e2">
     <div class="ins-title">✅ SHEIN — Canal líder en revenue</div>
     <div class="ins-body">Con <strong>$4.91M (26.4%)</strong> del total y crecimiento sostenido mes a mes (+10% May vs Ene). Priorizar inventario y publicaciones activas.</div>
   </div>
@@ -577,7 +587,7 @@ hr { border:none; border-top:1px solid #e5e7eb; margin:24px 0; }
     </thead>
     <tbody>
       <tr>
-        <td><div class="cn"><span class="cdot" style="background:#22c55e"></span>Distribuidores</div></td>
+        <td><div class="cn"><span class="cdot" style="background:#92400e"></span>Distribuidores</div></td>
         <td>239,472</td><td class="bold">242,056</td>
         <td>+2,584</td><td class="green" style="font-weight:700">▲ +1.1%</td>
         <td>562,969</td><td class="gray" style="font-weight:600">→ Estable</td>
@@ -629,7 +639,7 @@ Chart.defaults.font.size = 11;
 Chart.defaults.color = '#9ca3af';
 const grid = '#f3f4f6';
 const M5 = ['Ene','Feb','Mar','Abr','May'];
-const C = { dist:'#22c55e', pad:'#ec4899', shein:'#1a1a1a', ml:'#f5c800', amz:'#7c3aed', web:'#ef4444', imp:'#3b7ef0', sb:'#16a34a' };
+const C = { dist:'#92400e', pad:'#ec4899', shein:'#1a1a1a', ml:'#f5c800', amz:'#7c3aed', web:'#ef4444', imp:'#3b7ef0', sb:'#16a34a' };
 
 // 1. Barras apiladas ingresos
 new Chart(document.getElementById('cBar'), {
